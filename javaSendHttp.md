@@ -326,7 +326,6 @@
     
     /**
     * 测试
-    * @author SuperDragon
     *
     */
     public class A {
