@@ -1,9 +1,7 @@
 # Java模拟发送http请求
-
 ## 导航
 * [工具类](#util)
 * [实现类](#impl)
-
 ### <span id="util">工具类</span>
 ```javas
     import java.io.UnsupportedEncodingException;
