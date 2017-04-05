@@ -316,7 +316,7 @@
     }
 ```
 
-### <span id="impl">调用类</span>
+### <span id="impl">实现类</span>
 ```javas
     import java.util.HashMap;
     import java.util.Map;
