@@ -60,14 +60,17 @@
 
 <ul>
 <li>mysql初始化数据库
+</li>
+</ul>
 
-<code>
-CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci; 
+<pre><code>CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci; 
 CREATE USER 'sonar' IDENTIFIED BY 'sonar';
 GRANT ALL ON sonar.* TO 'sonar'@'%' IDENTIFIED BY 'sonar';
 GRANT ALL ON sonar.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar';
 FLUSH PRIVILEGES;
-</code></li>
+</code></pre>
+
+<ul>
 <li>SonarQube</li>
 </ul>
 
@@ -75,7 +78,7 @@ FLUSH PRIVILEGES;
 
 <p>配置SonarQube服务器sonar.properties</p>
 
-<pre><code class="language-conf">sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance
+<pre><code>sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance
 sonar.jdbc.username=sonar
 sonar.jdbc.password=sonar
 sonar.sorceEncoding=UTF-8
@@ -91,7 +94,7 @@ sonar.password=admin
 
 <p>SonarScanner配置文件sonar-scanner.properties</p>
 
-<pre><code class="language-conf">sonar.host.url=http://localhost:9000
+<pre><code>sonar.host.url=http://localhost:9000
 sonar.projectKey=hmall-test
 sonar.projectName=hmall-test
 sonar.sources=src
@@ -105,12 +108,18 @@ sonar.password=admin
 <hr />
 
 <ul>
-<li>安装sonarLint插件
-idea&ndash;plugns中查找sonarLint插件，并安装；安装完成后，重启idea；</li>
-<li>sonarLint配置
-idea&ndash;设置&ndash;other setting&ndash;SonarLint General Setting&ndash;添加sonarQube servers&ndash;填写server URL
-idea&ndash;设置&ndash;other setting&ndash;SonarLint Project Setting&ndash;勾选Enable binding to remote sonarQube server&ndash;选择上一步创建的server&ndash;选择对应的项目</li>
+<li>安装sonarLint插件</li>
 </ul>
+
+<p>idea&ndash;plugns中查找sonarLint插件，并安装；安装完成后，重启idea；</p>
+
+<ul>
+<li>sonarLint配置</li>
+</ul>
+
+<p>idea&ndash;设置&ndash;other setting&ndash;SonarLint General Setting&ndash;添加sonarQube servers&ndash;填写server URL</p>
+
+<p>idea&ndash;设置&ndash;other setting&ndash;SonarLint Project Setting&ndash;勾选Enable binding to remote sonarQube server&ndash;选择上一步创建的server&ndash;选择对应的项目</p>
             <ul class="share-buttons">
     <li>Share this article:</li>
     <li>

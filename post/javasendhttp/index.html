@@ -69,9 +69,10 @@
 
 <h3 id="span-id-util-工具类-span"><span id="util">工具类</span></h3>
 
-<p></p>
+<p></p></li>
+</ul>
 
-<pre><code class="language-java">import java.io.UnsupportedEncodingException;
+<pre><code>import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
@@ -83,7 +84,7 @@ import java.util.Map;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-    
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -103,9 +104,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-    
+
 public class HttpUtils {
-    
+
     private static Logger logger = LoggerFactory.getLogger(HttpRequestUtils.class);
     /**
      * get
@@ -120,7 +121,7 @@ public class HttpUtils {
      */
     public static HttpResponse doGet(String host, String path, String method,
             Map&lt;String, String&gt; headers,  Map&lt;String, String&gt; querys) throws Exception {      
-    
+
         HttpClient httpClient = wrapClient(host);
         HttpGet request = new HttpGet(buildUrl(host, path, querys));
         for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
@@ -128,7 +129,7 @@ public class HttpUtils {
         }
         return httpClient.execute(request);
     }
-    
+
     /**
      * post form
      *
@@ -147,15 +148,15 @@ public class HttpUtils {
             Map&lt;String, String&gt; bodys)
             throws Exception {      
         HttpClient httpClient = wrapClient(host);
-    
+
         HttpPost request = new HttpPost(buildUrl(host, path, querys));
         for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
             request.addHeader(e.getKey(), e.getValue());
         }
-    
+
         if (bodys != null) {
             List&lt;NameValuePair&gt; nameValuePairList = new ArrayList&lt;NameValuePair&gt;();
-    
+
             for (String key : bodys.keySet()) {
                 nameValuePairList.add(new BasicNameValuePair(key, bodys.get(key)));
             }
@@ -163,10 +164,10 @@ public class HttpUtils {
             formEntity.setContentType(&quot;application/x-www-form-urlencoded; charset=UTF-8&quot;);
             request.setEntity(formEntity);
         }
-    
+
         return httpClient.execute(request);
     }   
-    
+
     /**
      * Post String
      *
@@ -185,19 +186,19 @@ public class HttpUtils {
             String body)
             throws Exception {      
         HttpClient httpClient = wrapClient(host);
-    
+
         HttpPost request = new HttpPost(buildUrl(host, path, querys));
         for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
             request.addHeader(e.getKey(), e.getValue());
         }
-    
+
         if (StringUtils.isNotBlank(body)) {
             request.setEntity(new StringEntity(body, &quot;utf-8&quot;));
         }
-    
+
         return httpClient.execute(request);
     }
-    
+
     /**
      * Post stream
      *
@@ -216,19 +217,19 @@ public class HttpUtils {
             byte[] body)
             throws Exception {      
         HttpClient httpClient = wrapClient(host);
-    
+
         HttpPost request = new HttpPost(buildUrl(host, path, querys));
         for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
             request.addHeader(e.getKey(), e.getValue());
         }
-    
+
         if (body != null) {
             request.setEntity(new ByteArrayEntity(body));
         }
-    
+
         return httpClient.execute(request);
     }
-    
+
     /**
      * Put String
      * @param host
@@ -246,19 +247,19 @@ public class HttpUtils {
             String body)
             throws Exception {      
         HttpClient httpClient = wrapClient(host);
-    
+
         HttpPut request = new HttpPut(buildUrl(host, path, querys));
         for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
             request.addHeader(e.getKey(), e.getValue());
         }
-    
+
         if (StringUtils.isNotBlank(body)) {
             request.setEntity(new StringEntity(body, &quot;utf-8&quot;));
         }
-    
+
         return httpClient.execute(request);
     }
-    
+
     /**
      * Put stream
      * @param host
@@ -276,19 +277,19 @@ public class HttpUtils {
             byte[] body)
             throws Exception {      
         HttpClient httpClient = wrapClient(host);
-    
+
         HttpPut request = new HttpPut(buildUrl(host, path, querys));
         for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
             request.addHeader(e.getKey(), e.getValue());
         }
-    
+
         if (body != null) {
             request.setEntity(new ByteArrayEntity(body));
         }
-    
+
         return httpClient.execute(request);
     }
-    
+
     /**
      * Delete
      *  
@@ -305,15 +306,15 @@ public class HttpUtils {
             Map&lt;String, String&gt; querys)
             throws Exception {      
         HttpClient httpClient = wrapClient(host);
-    
+
         HttpDelete request = new HttpDelete(buildUrl(host, path, querys));
         for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
             request.addHeader(e.getKey(), e.getValue());
         }
-    
+
         return httpClient.execute(request);
     }
-    
+
     private static String buildUrl(String host, String path, Map&lt;String, String&gt; querys) throws UnsupportedEncodingException {
         StringBuilder sbUrl = new StringBuilder();
         sbUrl.append(host);
@@ -341,19 +342,19 @@ public class HttpUtils {
                 sbUrl.append(&quot;?&quot;).append(sbQuery);
             }
         }
-    
+
         return sbUrl.toString();
     }
-    
+
     private static HttpClient wrapClient(String host) {
         HttpClient httpClient = new DefaultHttpClient();
         if (host.startsWith(&quot;https://&quot;)) {
             sslClient(httpClient);
         }
-    
+
         return httpClient;
     }
-    
+
     private static void sslClient(HttpClient httpClient) {
         try {
             SSLContext ctx = SSLContext.getInstance(&quot;TLS&quot;);
@@ -362,10 +363,10 @@ public class HttpUtils {
                     return null;
                 }
                 public void checkClientTrusted(X509Certificate[] xcs, String str) {
-    
+
                 }
                 public void checkServerTrusted(X509Certificate[] xcs, String str) {
-    
+
                 }
             };
             ctx.init(null, new TrustManager[] { tm }, null);
@@ -381,47 +382,47 @@ public class HttpUtils {
         }
     }
 }
-</code></pre></li>
-</ul>
+
+</code></pre>
 
 <h3 id="span-id-impl-实现类-span"><span id="impl">实现类</span></h3>
 
-<pre><code class="language-java">    import java.util.HashMap;
-    import java.util.Map;
-    
-    import org.apache.http.HttpResponse;
-    import org.apache.http.util.EntityUtils;
-    
-    /**
-    * 测试
-    *
-    */
-    public class A {
-        public static void main(String[] args) {
-            String host = &quot;http://hmall.ut.saas.hand-china.com&quot;;
-            String path = &quot;/hmall-od-service/order/updateOrderSended/2017033001100000579&quot;;
-            String method = &quot;POST&quot;;
-    
-    
-            Map&lt;String, String&gt; headers = new HashMap&lt;String, String&gt;();
-            Map&lt;String, String&gt; body = new HashMap&lt;String, String&gt;();
-            //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
-            headers.put(&quot;Authorization&quot;, &quot;APPCODE da19b6f400fb4c75b6eee8a2cea43cb6&quot;);
-            body.put(&quot;access_token&quot;, &quot;1be5eade-c56b-4209-b40f-c893900be310&quot;);
-            Map&lt;String, String&gt; querys = new HashMap&lt;String, String&gt;();
-    
-    
-            try {
-                HttpResponse response = HttpUtils.doPost(host, path, method, headers, querys,body);
-    //            System.out.println(response.toString());
-                //获取response的body
-                System.out.println(EntityUtils.toString(response.getEntity()));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+<pre><code class="language-java">import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.util.EntityUtils;
+
+/**
+* 测试
+*
+*/
+public class A {
+    public static void main(String[] args) {
+        String host = &quot;http://hmall.ut.saas.hand-china.com&quot;;
+        String path = &quot;/hmall-od-service/order/updateOrderSended/2017033001100000579&quot;;
+        String method = &quot;POST&quot;;
+
+
+        Map&lt;String, String&gt; headers = new HashMap&lt;String, String&gt;();
+        Map&lt;String, String&gt; body = new HashMap&lt;String, String&gt;();
+        //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
+        headers.put(&quot;Authorization&quot;, &quot;APPCODE da19b6f400fb4c75b6eee8a2cea43cb6&quot;);
+        body.put(&quot;access_token&quot;, &quot;1be5eade-c56b-4209-b40f-c893900be310&quot;);
+        Map&lt;String, String&gt; querys = new HashMap&lt;String, String&gt;();
+
+
+        try {
+            HttpResponse response = HttpUtils.doPost(host, path, method, headers, querys,body);
+//            System.out.println(response.toString());
+            //获取response的body
+            System.out.println(EntityUtils.toString(response.getEntity()));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    
     }
+
+}
 </code></pre>
             <ul class="share-buttons">
     <li>Share this article:</li>
