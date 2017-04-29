@@ -1,24 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>John Doe&#39;s blog</title>
+    <title>张永兴的博客</title>
     <link>http://zhangyongxing89.github.io/</link>
-    <description>Recent content on John Doe&#39;s blog</description>
+    <description>Recent content on 张永兴的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
+    <lastBuildDate>Sat, 29 Apr 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://zhangyongxing89.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title></title>
+      <title>SonarQube文档</title>
+      <link>http://zhangyongxing89.github.io/post/sonarinstaller/</link>
+      <pubDate>Sat, 29 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://zhangyongxing89.github.io/post/sonarinstaller/</guid>
+      <description>&lt;h2 id=&#34;1-sonar安装&#34;&gt;1. sonar安装&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mysql初始化数据库</description>
+    </item>
+    
+    <item>
+      <title>Java模拟发送http请求</title>
       <link>http://zhangyongxing89.github.io/post/javasendhttp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://zhangyongxing89.github.io/post/javasendhttp/</guid>
-      <description>Java模拟发送http请求 导航  工具类 实现类
-工具类 import java.io.UnsupportedEncodingException; import java.net.URLEncoder; import java.security.KeyManagementException; import java.security.NoSuchAlgorithmException; import java.security.cert.X509Certificate; import java.util.ArrayList; import java.util.List; import java.util.Map; import javax.net.ssl.SSLContext; import javax.net.ssl.TrustManager; import javax.net.ssl.X509TrustManager; import org.apache.commons.lang.StringUtils; import org.apache.http.HttpResponse; import org.apache.http.NameValuePair; import org.apache.http.client.HttpClient; import org.apache.http.client.entity.UrlEncodedFormEntity; import org.apache.http.client.methods.HttpDelete; import org.apache.http.client.methods.HttpGet; import org.apache.http.client.methods.HttpPost; import org.apache.http.client.methods.HttpPut; import org.apache.http.conn.ClientConnectionManager; import org.apache.http.conn.scheme.Scheme; import org.apache.http.conn.scheme.SchemeRegistry; import org.apache.http.conn.ssl.SSLSocketFactory; import org.apache.http.entity.ByteArrayEntity; import org.apache.http.entity.StringEntity; import org.apache.http.impl.client.DefaultHttpClient; import org.apache.http.message.BasicNameValuePair; import org.slf4j.Logger; import org.slf4j.LoggerFactory; public class HttpUtils { private static Logger logger = LoggerFactory.</description>
+      <description>&lt;h2 id=&#34;导航&#34;&gt;导航&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#util&#34;&gt;工具类&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#impl&#34;&gt;实现类&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;span-id-util-工具类-span&#34;&gt;&lt;span id=&#34;util&#34;&gt;工具类&lt;/span&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
