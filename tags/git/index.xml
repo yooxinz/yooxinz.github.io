@@ -18,7 +18,7 @@
       <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://zhangyongxing89.github.io/post/gitignore/</guid>
-      <description> 先创建的项目后添加.gitignore文件时遇到不生效的情况  git rm -r --cached . git add . git commit -m &#39;update .gitignore&#39;   </description>
+      <description> 先创建的项目后添加.gitignore文件时遇到不生效的情况  git rm -r --cached . git add . git commit -m &#39;update .gitignore&#39;  </description>
     </item>
     
   </channel>
