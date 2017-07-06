@@ -2,32 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Java on 张永兴的博客</title>
-    <link>https://zhangyongxing89.github.io/tags/java/</link>
+    <link>https://www.yooxinz.com/tags/java/</link>
     <description>Recent content in Java on 张永兴的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
     <lastBuildDate>Sat, 15 Apr 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://zhangyongxing89.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.yooxinz.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Java模拟发送http请求</title>
-      <link>https://zhangyongxing89.github.io/post/javasendhttp/</link>
+      <link>https://www.yooxinz.com/post/javasendhttp/</link>
       <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://zhangyongxing89.github.io/post/javasendhttp/</guid>
-      <description>&lt;h2 id=&#34;导航&#34;&gt;导航&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#util&#34;&gt;工具类&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#impl&#34;&gt;实现类&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;span-id-util-工具类-span&#34;&gt;&lt;span id=&#34;util&#34;&gt;工具类&lt;/span&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://www.yooxinz.com/post/javasendhttp/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

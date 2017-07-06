@@ -2,56 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 张永兴的博客</title>
-    <link>https://zhangyongxing89.github.io/post/</link>
+    <link>https://www.yooxinz.com/post/</link>
     <description>Recent content in Posts on 张永兴的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
     <lastBuildDate>Mon, 01 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://zhangyongxing89.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.yooxinz.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Git忽略规则及.gitignore规则不生效的解决办法</title>
-      <link>https://zhangyongxing89.github.io/post/gitignore/</link>
+      <link>https://www.yooxinz.com/post/gitignore/</link>
       <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://zhangyongxing89.github.io/post/gitignore/</guid>
+      <guid>https://www.yooxinz.com/post/gitignore/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;先创建的项目后添加.gitignore文件时遇到不生效的情况</description>
+&lt;li&gt;先创建的项目后添加.gitignore文件时遇到不生效的情况&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>SonarQube文档</title>
-      <link>https://zhangyongxing89.github.io/post/sonarinstaller/</link>
+      <link>https://www.yooxinz.com/post/sonarinstaller/</link>
       <pubDate>Sat, 29 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://zhangyongxing89.github.io/post/sonarinstaller/</guid>
-      <description>&lt;h2 id=&#34;1-sonar安装&#34;&gt;1. sonar安装&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;mysql初始化数据库</description>
+      <guid>https://www.yooxinz.com/post/sonarinstaller/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Java模拟发送http请求</title>
-      <link>https://zhangyongxing89.github.io/post/javasendhttp/</link>
+      <link>https://www.yooxinz.com/post/javasendhttp/</link>
       <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://zhangyongxing89.github.io/post/javasendhttp/</guid>
-      <description>&lt;h2 id=&#34;导航&#34;&gt;导航&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#util&#34;&gt;工具类&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#impl&#34;&gt;实现类&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;span-id-util-工具类-span&#34;&gt;&lt;span id=&#34;util&#34;&gt;工具类&lt;/span&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://www.yooxinz.com/post/javasendhttp/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
