@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on 张永兴的博客</title>
-    <link>https://blog.yooxinz.com/tags/git/</link>
+    <link>https://zhangyongxing89.github.io/tags/git/</link>
     <description>Recent content in Git on 张永兴的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.yooxinz.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zhangyongxing89.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Git忽略规则及.gitignore规则不生效的解决办法</title>
-      <link>https://blog.yooxinz.com/post/gitignore/</link>
+      <link>https://zhangyongxing89.github.io/post/gitignore/</link>
       <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.yooxinz.com/post/gitignore/</guid>
+      <guid>https://zhangyongxing89.github.io/post/gitignore/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;先创建的项目后添加.gitignore文件时遇到不生效的情况&lt;/li&gt;
 &lt;/ul&gt;
