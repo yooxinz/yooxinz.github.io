@@ -398,22 +398,20 @@ import org.apache.http.util.EntityUtils;
 */
 public class A {
     public static void main(String[] args) {
-        String host = &quot;http://hmall.ut.saas.hand-china.com&quot;;
-        String path = &quot;/hmall-od-service/order/updateOrderSended/2017033001100000579&quot;;
+        String host = &quot;http://baidu.com&quot;;
+        String path = &quot;/test/&quot;;
         String method = &quot;POST&quot;;
 
 
         Map&lt;String, String&gt; headers = new HashMap&lt;String, String&gt;();
         Map&lt;String, String&gt; body = new HashMap&lt;String, String&gt;();
-        //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
-        headers.put(&quot;Authorization&quot;, &quot;APPCODE da19b6f400fb4c75b6eee8a2cea43cb6&quot;);
-        body.put(&quot;access_token&quot;, &quot;1be5eade-c56b-4209-b40f-c893900be310&quot;);
+        headers.put(&quot;Authorization&quot;, &quot;&quot;);
+        body.put(&quot;access_token&quot;, &quot;&quot;);
         Map&lt;String, String&gt; querys = new HashMap&lt;String, String&gt;();
 
 
         try {
             HttpResponse response = HttpUtils.doPost(host, path, method, headers, querys,body);
-//            System.out.println(response.toString());
             //获取response的body
             System.out.println(EntityUtils.toString(response.getEntity()));
         } catch (Exception e) {
