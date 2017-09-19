@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://zhangyongxing89.github.io/post/javagetattributebyreflect/</loc>
+    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zhangyongxing89.github.io/post/githubblogdomainbinding/</loc>
     <lastmod>2017-07-25T00:00:00+00:00</lastmod>
   </url>
@@ -76,6 +81,12 @@
   
   <url>
     <loc>https://zhangyongxing89.github.io/post/</loc>
+    <lastmod>2017-08-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhangyongxing89.github.io/tags/reflect/</loc>
     <lastmod>2017-08-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

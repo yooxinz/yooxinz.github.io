@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Java反射获取实体属性</title>
+      <link>https://zhangyongxing89.github.io/post/javagetattributebyreflect/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhangyongxing89.github.io/post/javagetattributebyreflect/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Java模拟发送http请求</title>
       <link>https://zhangyongxing89.github.io/post/javasendhttp/</link>
       <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
