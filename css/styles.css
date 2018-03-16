@@ -791,3 +791,22 @@ body.post-template .site-header h2 .logo {
 
 .clearfix:after {
   clear: both; }
+
+.tags{
+  flex-wrap: wrap;
+  display: flex;
+}
+.tags .tag{
+  color: #bac2cf;
+  display: block;
+  background: #f4f5f8;
+  border-radius: 3px;
+  border: 1px solid #f4f5f8;
+  line-height: 13px;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  letter-spacing: .23px;
+  margin: 10px 0 10px 7px;
+  width: 100px;
+}
