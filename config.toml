@@ -1,0 +1,42 @@
+baseurl = "https://zhangyongxing89.github.io"
+languageCode = "en-us"
+title = "张永兴的博客"
+# Define how many pages appear per site
+paginate = 5
+# Enable comments powered by Disqus by entering your disqus shortname
+disqusShortname = "yooxinz"
+# Enable gogle analytics by entering your tracking code
+# googleAnalytics = ""
+theme = "hugo-minimalist-theme"
+# Remove this line if you use this theme for a real website.
+# It allows you to preview the theme within the exampleSite folder
+# with the hugo server command
+#themesDir = "../.."
+
+[params]
+    site_author = "张永兴"
+    site_description = "张永兴的个人博客"
+    location = "陕西"
+    # Link custom assets relative to /static
+    avatar = "img/heard.png"
+    header_background = "img/desk.jpg"
+    header_title = "张永兴的个人博客"
+    #copyright = "Powered by [Hugo](http://gohugo.io)."
+    # custom_css = []
+    # custom_js  = []
+
+    # Enable gogle analytics by entering your tracking code
+    # google_analytics = ""
+
+[social]
+    # Add your social network accounts to the profile section on the left
+    # by entering your username. The links to your account will be
+    # create automatically.
+    # twitter   = ""
+    # facebook  = ""
+    # linkedin  = ""
+    # behance   = ""
+    # dribbble  = ""
+    # instagram = ""
+     github    = "zhangyongxing89"
+    # gplus     = ""
