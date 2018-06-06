@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 张永兴的博客</title>
-    <link>https://zhangyongxing89.github.io/post/</link>
+    <link>http://zhangyongxing89.github.io/post/</link>
     <description>Recent content in Posts on 张永兴的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://zhangyongxing89.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://zhangyongxing89.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Java反射获取实体属性</title>
-      <link>https://zhangyongxing89.github.io/post/javagetattributebyreflect/</link>
+      <link>http://zhangyongxing89.github.io/post/javagetattributebyreflect/</link>
       <pubDate>Tue, 19 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://zhangyongxing89.github.io/post/javagetattributebyreflect/</guid>
+      <guid>http://zhangyongxing89.github.io/post/javagetattributebyreflect/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Java中获取资源文件</title>
-      <link>https://zhangyongxing89.github.io/post/javagetresource/</link>
+      <link>http://zhangyongxing89.github.io/post/javagetresource/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://zhangyongxing89.github.io/post/javagetresource/</guid>
+      <guid>http://zhangyongxing89.github.io/post/javagetresource/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>github博客域名绑定</title>
-      <link>https://zhangyongxing89.github.io/post/githubblogdomainbinding/</link>
+      <link>http://zhangyongxing89.github.io/post/githubblogdomainbinding/</link>
       <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://zhangyongxing89.github.io/post/githubblogdomainbinding/</guid>
+      <guid>http://zhangyongxing89.github.io/post/githubblogdomainbinding/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Git忽略规则及.gitignore规则不生效的解决办法</title>
-      <link>https://zhangyongxing89.github.io/post/gitignore/</link>
+      <link>http://zhangyongxing89.github.io/post/gitignore/</link>
       <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://zhangyongxing89.github.io/post/gitignore/</guid>
+      <guid>http://zhangyongxing89.github.io/post/gitignore/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>SonarQube文档</title>
-      <link>https://zhangyongxing89.github.io/post/sonarinstaller/</link>
+      <link>http://zhangyongxing89.github.io/post/sonarinstaller/</link>
       <pubDate>Sat, 29 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://zhangyongxing89.github.io/post/sonarinstaller/</guid>
+      <guid>http://zhangyongxing89.github.io/post/sonarinstaller/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Java模拟发送http请求</title>
-      <link>https://zhangyongxing89.github.io/post/javasendhttp/</link>
+      <link>http://zhangyongxing89.github.io/post/javasendhttp/</link>
       <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://zhangyongxing89.github.io/post/javasendhttp/</guid>
+      <guid>http://zhangyongxing89.github.io/post/javasendhttp/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
