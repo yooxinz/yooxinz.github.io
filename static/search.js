@@ -1,5 +1,4 @@
 var $results, INDEX_DATA={};
-var baseUrl = $("body").attr("baseUrl");
     function initLunr() {
         // First retrieve the index file
         $.getJSON('/lunr.json')
@@ -61,14 +60,14 @@ var baseUrl = $("body").attr("baseUrl");
         // Only show the ten first results
         results.slice(0, 10).forEach(function(result) {
             var $result = $('<article class="post">');
-            $result.append('<h1><a href="'+ baseUrl +'/'+ result.url.toLowerCase() +'" title="'+ result.title +'">'+ result.title +'</a></h1>');
+            $result.append('<h1><a href="/'+ result.url.toLowerCase() +'" title="'+ result.title +'">'+ result.title +'</a></h1>');
 
             var $footer = $('<footer class="post-info">Posted on');
 
             var $span = $('<span class="post-meta">');
             $span.append('<time datetime="'+ result.date +'">'+ result.date +'</time>· Tagged in');
             for (index=0; index < result.tags.length; index++){
-                $span.append('<a href="'+ baseUrl +'/tags/'+ result.tags[index].toLowerCase() +'">'+result.tags[index]+'</a>')
+                $span.append('<a href="/tags/'+ result.tags[index].toLowerCase() +'">'+result.tags[index]+'</a>')
             }
             $span.append('</span>');
 
@@ -77,7 +76,7 @@ var baseUrl = $("body").attr("baseUrl");
             
             $result.append($footer);
             $result.append('<div>'+result.body +'</div>');
-            $result.append('<a href="'+ baseUrl +'/' + result.url.toLowerCase() +'" title="'+ result.title +'">Read more »</a>');
+            $result.append('<a href="/' + result.url.toLowerCase() +'" title="'+ result.title +'">Read more »</a>');
             $result.append('</article>');
             $results.append($result);
         });
