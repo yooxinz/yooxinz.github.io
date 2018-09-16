@@ -756,7 +756,9 @@ body.post-template .site-header h2 .logo {
     margin: 0; }
 
   .author {
-    margin-bottom: 60px; }
+    margin-bottom: 60px; 
+    display: none;
+  }
 
   .site-header,
   body.post-template > .site-header {
