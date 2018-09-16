@@ -61,7 +61,7 @@ var baseUrl = $("body").attr("baseUrl");
         // Only show the ten first results
         results.slice(0, 10).forEach(function(result) {
             var $result = $('<article class="post">');
-            $result.append('<h1><a href="'+ baseUrl + result.url.toLowerCase() +'" title="'+ result.title +'">'+ result.title +'</a></h1>');
+            $result.append('<h1><a href="'+ baseUrl +'/'+ result.url.toLowerCase() +'" title="'+ result.title +'">'+ result.title +'</a></h1>');
 
             var $footer = $('<footer class="post-info">Posted on');
 
@@ -77,7 +77,7 @@ var baseUrl = $("body").attr("baseUrl");
             
             $result.append($footer);
             $result.append('<div>'+result.body +'</div>');
-            $result.append('<a href="'+ baseUrl + result.url.toLowerCase() +'" title="'+ result.title +'">Read more »</a>');
+            $result.append('<a href="'+ baseUrl +'/' + result.url.toLowerCase() +'" title="'+ result.title +'">Read more »</a>');
             $result.append('</article>');
             $results.append($result);
         });
