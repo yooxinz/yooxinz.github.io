@@ -3,7 +3,6 @@ date = "2017-04-15"
 tags = ["java","http"]
 title = "Java模拟发送http请求"
 +++
-<!--more-->
 
 ## 导航
 * [工具类](#util)

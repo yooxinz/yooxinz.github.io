@@ -3,9 +3,8 @@ date = "2017-04-29"
 tags = []
 title = "SonarQube文档"
 +++
-<!--more-->
 
-## 1. sonar安装
+# 1. sonar安装
 ___
 * mysql初始化数据库
 

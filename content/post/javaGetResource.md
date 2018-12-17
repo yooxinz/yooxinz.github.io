@@ -3,9 +3,8 @@ date = "2017-08-09"
 tags = ["Java","Resource"]
 title = "Java中获取资源文件"
 +++
-<!--more-->
 
-##Java中获取资源文件
+## Java中获取资源文件
 Java中可以通过getClass().getResource()方法获取资源文件
 
 比如我们有以下目录
