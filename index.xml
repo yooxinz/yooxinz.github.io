@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>张永兴的博客</title>
-    <link>http://c7n.eg.com/</link>
+    <link>https://yooxinz.github.io/</link>
     <description>Recent content on 张永兴的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://c7n.eg.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://yooxinz.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Java反射获取实体属性</title>
-      <link>http://c7n.eg.com/post/javagetattributebyreflect/</link>
+      <link>https://yooxinz.github.io/post/javagetattributebyreflect/</link>
       <pubDate>Tue, 19 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://c7n.eg.com/post/javagetattributebyreflect/</guid>
+      <guid>https://yooxinz.github.io/post/javagetattributebyreflect/</guid>
       <description> Java反射获取实体属性 Java中可以听过反射获取未知实体的属性
 Field field=message.getClass().getDeclaredField(&amp;quot;value&amp;quot;); field.setAccessible(true); field.get(message);  </description>
     </item>
     
     <item>
       <title>Java中获取资源文件</title>
-      <link>http://c7n.eg.com/post/javagetresource/</link>
+      <link>https://yooxinz.github.io/post/javagetresource/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://c7n.eg.com/post/javagetresource/</guid>
+      <guid>https://yooxinz.github.io/post/javagetresource/</guid>
       <description>Java中获取资源文件 Java中可以通过getClass().getResource()方法获取资源文件
 比如我们有以下目录
 |--project |--src |--main |--java |--Test.java |--file.txt |--target |--classes |--Test.class |--file.txt  现在要在Test.java中获取file文件
@@ -36,10 +36,10 @@ getClass().getResource(&amp;quot;/file.txt&amp;quot;)  这里指定的路径可�
     
     <item>
       <title>github博客域名绑定</title>
-      <link>http://c7n.eg.com/post/githubblogdomainbinding/</link>
+      <link>https://yooxinz.github.io/post/githubblogdomainbinding/</link>
       <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://c7n.eg.com/post/githubblogdomainbinding/</guid>
+      <guid>https://yooxinz.github.io/post/githubblogdomainbinding/</guid>
       <description>github博客域名绑定 通过github创建的blog绑定域名时出现不加载js,css.可以尝试该方法
 hugo的config.toml文件中需要指定访问地址
 baseurl = &amp;quot;https://githubname.github.io&amp;quot;  这里的baseurl必须指向blog的github地址.</description>
@@ -47,19 +47,19 @@ baseurl = &amp;quot;https://githubname.github.io&amp;quot;  这里的baseurl必�
     
     <item>
       <title>Git忽略规则及.gitignore规则不生效的解决办法</title>
-      <link>http://c7n.eg.com/post/gitignore/</link>
+      <link>https://yooxinz.github.io/post/gitignore/</link>
       <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://c7n.eg.com/post/gitignore/</guid>
+      <guid>https://yooxinz.github.io/post/gitignore/</guid>
       <description> 先创建的项目后添加.gitignore文件时遇到不生效的情况   git rm -r --cached . git add . git commit -m &#39;update .gitignore&#39;  </description>
     </item>
     
     <item>
       <title>SonarQube文档</title>
-      <link>http://c7n.eg.com/post/sonarinstaller/</link>
+      <link>https://yooxinz.github.io/post/sonarinstaller/</link>
       <pubDate>Sat, 29 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://c7n.eg.com/post/sonarinstaller/</guid>
+      <guid>https://yooxinz.github.io/post/sonarinstaller/</guid>
       <description>1. sonar安装  mysql初始化数据库  CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci; CREATE USER &#39;sonar&#39; IDENTIFIED BY &#39;sonar&#39;; GRANT ALL ON sonar.* TO &#39;sonar&#39;@&#39;%&#39; IDENTIFIED BY &#39;sonar&#39;; GRANT ALL ON sonar.* TO &#39;sonar&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;sonar&#39;; FLUSH PRIVILEGES;   SonarQube  下载地址
 配置SonarQube服务器sonar.properties
 sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;rewriteBatchedStatements=true&amp;amp;useConfigs=maxPerformance sonar.jdbc.username=sonar sonar.jdbc.password=sonar sonar.sorceEncoding=UTF-8 sonar.login=admin sonar.password=admin   SonarScanner  下载地址
@@ -69,10 +69,10 @@ sonar.host.url=http://localhost:9000 sonar.projectKey=hmall-test sonar.projectNa
     
     <item>
       <title>Java模拟发送http请求</title>
-      <link>http://c7n.eg.com/post/javasendhttp/</link>
+      <link>https://yooxinz.github.io/post/javasendhttp/</link>
       <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://c7n.eg.com/post/javasendhttp/</guid>
+      <guid>https://yooxinz.github.io/post/javasendhttp/</guid>
       <description>导航  工具类 实现类
 工具类  import java.io.UnsupportedEncodingException; import java.net.URLEncoder; import java.security.KeyManagementException; import java.security.NoSuchAlgorithmException; import java.security.cert.X509Certificate; import java.util.ArrayList; import java.util.List; import java.util.Map; import javax.net.ssl.SSLContext; import javax.net.ssl.TrustManager; import javax.net.ssl.X509TrustManager; import clover.org.apache.commons.lang.StringUtils; import org.apache.http.HttpResponse; import org.apache.http.NameValuePair; import org.apache.http.client.HttpClient; import org.apache.http.client.entity.UrlEncodedFormEntity; import org.apache.http.client.methods.HttpDelete; import org.apache.http.client.methods.HttpGet; import org.apache.http.client.methods.HttpPost; import org.apache.http.client.methods.HttpPut; import org.apache.http.conn.ClientConnectionManager; import org.apache.http.conn.scheme.Scheme; import org.apache.http.conn.scheme.SchemeRegistry; import org.apache.http.conn.ssl.SSLSocketFactory; import org.apache.http.entity.ByteArrayEntity; import org.apache.http.entity.StringEntity; import org.apache.http.impl.client.DefaultHttpClient; import org.apache.http.message.BasicNameValuePair; import org.slf4j.Logger; import org.slf4j.LoggerFactory; public class HttpUtils { /** * get * * @param host * @param path * @param method * @param headers * @param querys * @return * @throws Exception */ public static HttpResponse doGet(String host, String path, String method, Map&amp;lt;String, String&amp;gt; headers, Map&amp;lt;String, String&amp;gt; querys) throws Exception { HttpClient httpClient = wrapClient(host); HttpGet request = new HttpGet(buildUrl(host, path, querys)); for (Map.</description>
     </item>
