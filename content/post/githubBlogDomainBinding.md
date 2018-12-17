@@ -1,6 +1,6 @@
 +++
 date = "2017-07-25"
-tags = ["blog","github","Domain","hugo"]
+tags = ["github"]
 title = "github博客域名绑定"
 +++
 

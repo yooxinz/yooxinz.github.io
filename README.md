@@ -10,5 +10,6 @@ hugo server -w
 生成站点
 
 ```
+grunt index
 hugo
 ```

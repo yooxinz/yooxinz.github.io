@@ -1,6 +1,6 @@
 +++
 date = "2017-04-15"
-tags = ["java","http"]
+tags = ["java"]
 title = "Java模拟发送http请求"
 +++
 

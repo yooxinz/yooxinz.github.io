@@ -1,6 +1,6 @@
 +++
 date = "2017-09-19"
-tags = ["Java","reflect"]
+tags = ["java"]
 title = "Java反射获取实体属性"
 +++
 

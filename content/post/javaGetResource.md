@@ -1,6 +1,6 @@
 +++
 date = "2017-08-09"
-tags = ["Java","Resource"]
+tags = ["java"]
 title = "Java中获取资源文件"
 +++
 

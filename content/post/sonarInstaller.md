@@ -1,6 +1,6 @@
 +++
 date = "2017-04-29"
-tags = []
+tags = ["sonarQube"]
 title = "SonarQube文档"
 +++
 

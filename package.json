@@ -19,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/zhangyongxing89/zhangyongxing89.github.io/issues"
   },
-  "homepage": "https://github.com/zhangyongxing89/zhangyongxing89.github.io#readme"
+  "homepage": "https://github.com/zhangyongxing89/zhangyongxing89.github.io#readme",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "gulp": "^4.0.0",
+    "html-entities": "^1.2.1",
+    "marked": "^0.5.2",
+    "string": "^3.3.3",
+    "toml": "^2.3.3"
+  }
 }
