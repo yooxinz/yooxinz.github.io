@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Categories &middot; 张永兴的博客</title>
+        <title>Sonarqube &middot; 张永兴的博客</title>
         <meta name="author">
         <meta name="description" content="张永兴的个人博客">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,12 +37,47 @@
 
 <div class="container clearfix">
     <main role="main" class="content">
-    <a class="btn home" href="https://yooxinz.github.io" title="Back to home">&laquo; Back to home</a>
-    <h2>Categories:</a>
-    <ul>
-     
-    </ul>
+        <a class="btn home" href="https://yooxinz.github.io" title="Back to home">&laquo; Back to home</a>
+        
+        
+            <article class="post">
+    
+<h1><a href="https://yooxinz.github.io/post/sonarinstaller/" title="SonarQube文档">SonarQube文档</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.04.29">2017.04.29</time>
+
+    &middot; Tagged in
+        
+        <a href="https://yooxinz.github.io/tags/sonarqube">sonarqube</a>
+        
+    
+
+</span>
+</footer>
+
+    <p><ol>
+<li>sonar安装  mysql初始化数据库  CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci; CREATE USER &lsquo;sonar&rsquo; IDENTIFIED BY &lsquo;sonar&rsquo;; GRANT ALL ON sonar.* TO &lsquo;sonar&rsquo;@&lsquo;%&rsquo; IDENTIFIED BY &lsquo;sonar&rsquo;; GRANT ALL ON sonar.* TO &lsquo;sonar&rsquo;@&lsquo;localhost&rsquo; IDENTIFIED BY &lsquo;sonar&rsquo;; FLUSH PRIVILEGES;   SonarQube  下载地址
+配置SonarQube服务器sonar.properties
+sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance sonar.jdbc.username=sonar sonar.jdbc.password=sonar sonar.sorceEncoding=UTF-8 sonar.login=admin sonar.password=admin   SonarScanner  下载地址
+SonarScanner配置文件sonar-scanner.properties
+sonar.host.url=<a href="http://localhost:9000">http://localhost:9000</a> sonar.projectKey=hmall-test sonar.projectName=hmall-test sonar.sources=src sonar.language=java sonar.login=admin sonar.password=admin  2.sonarLint安装  安装sonarLint插件  idea&ndash;plugns中查找sonarLint插件，并安装；安装完成后，重启idea；</li>
+</ol>
+&hellip;</p>
+    <a href="https://yooxinz.github.io/post/sonarinstaller/" title="SonarQube文档">Read more &raquo;</a>
+</article>
+
+        
+        <div class="pagination">
+<nav>
+
+	<p class="counter">Page 1 of 1</p>
+
+
+</nav>
+</div>
+
     </main>
+
     <aside class="author">
 	<script>
   (function() {

@@ -1,0 +1,392 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>张永兴的博客</title>
+        <meta name="author">
+        <meta name="description" content="张永兴的个人博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.52" />
+        <link href='https://yooxinz.github.io/post/index.xml' rel="alternate" type="application/rss+xml" title="张永兴的博客" />
+        <link href='https://yooxinz.github.io/post/index.xml' rel="feed" type="application/rss+xml" title="张永兴的博客" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href='https://yooxinz.github.io/css/styles.css'>
+        <link rel="icon" href='https://yooxinz.github.io/favicon.ico'>
+        <link rel="apple-touch-icon" href='https://yooxinz.github.io/apple-touch-icon.png' />
+        <link rel="stylesheet" href='https://cdn.bootcss.com/highlight.js/8.8.0/styles/androidstudio.min.css'>
+        <script src='https://cdn.bootcss.com/modernizr/2.8.0/modernizr.min.js'></script>
+        
+        
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?fdf7fda5654da5c80c86d1074142d32a";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    </head>
+    <body baseUrl="https://yooxinz.github.io">
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2>张永兴的个人博客</h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://yooxinz.github.io" title="Back to home">&laquo; Back to home</a>
+            
+<h1><a href="https://yooxinz.github.io/post/hugosearch/" title="实现Hugo中的搜索功能">实现Hugo中的搜索功能</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2018.12.17">2018.12.17</time>
+
+    &middot; Tagged in
+        
+        <a href="https://yooxinz.github.io/tags/hugo">hugo</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<h1 id="安装需要的组件">安装需要的组件</h1>
+
+<h2 id="安装grunt">安装Grunt</h2>
+
+<pre><code>npm install -g grunt-cli
+</code></pre>
+
+<h2 id="安装需要的包工具">安装需要的包工具</h2>
+
+<pre><code>npm install --save-dev toml string html-entities marked grunt
+</code></pre>
+
+<h1 id="生成索引文件">生成索引文件</h1>
+
+<ol>
+<li>新建Gruntfile文件，并修改其中相关参数。</li>
+</ol>
+
+<ul>
+<li>CONTENT_PATH_PREFIX：要搜索的内容路径</li>
+<li>FILE_SUFFIX：目标文件的文件后缀名</li>
+<li>FILE_SPLIT：文章头部分隔符</li>
+<li>INDEX_JSON_FILE_PATH：最终生成的索引文件的路径</li>
+</ul>
+
+<p>Gruntfile.js内容如下：</p>
+
+<pre><code>var toml = require(&quot;toml&quot;);
+var S = require(&quot;string&quot;);
+var Entities = require('html-entities').AllHtmlEntities;
+var Html = new Entities();
+var marked = require(&quot;marked&quot;);
+
+var CONTENT_PATH_PREFIX = &quot;./content/post&quot;;
+var FILE_SUFFIX = &quot;.md&quot;;
+var FILE_SPLIT = &quot;+++&quot;;
+var INDEX_JSON_FILE_PATH = &quot;./static/lunr.json&quot;;
+var documentsStore = {};
+
+module.exports = function(grunt) {
+
+    grunt.registerTask(&quot;index&quot;, function() {
+		
+		 var indexPages = function() {
+			//遍历目标路径下所有文件
+            grunt.file.recurse(CONTENT_PATH_PREFIX, function(abspath, rootdir, subdir, filename) {
+                grunt.verbose.writeln(&quot;Parse file:&quot;,abspath);
+                processFile(abspath, filename);
+            });
+
+            return documentsStore;
+        };
+		
+		//处理不同类型的文件
+		var processFile = function(abspath, filename) {
+            if (S(filename).endsWith(FILE_SUFFIX)){
+                processMDFile(abspath, filename);
+            }
+        };
+        //处理markdown文件
+		var processMDFile = function(abspath, filename) {
+			var body = grunt.file.read(abspath);
+
+			if(!body){
+				return null;
+			}
+			body = body.split(FILE_SPLIT);
+			var frontMatter;
+			try {
+				frontMatter = toml.parse(body[1].trim());
+			} catch (e) {
+				console.log(e.message);
+				return null;
+			}
+			
+			// 生成对应文件连接，用于搜索结果跳转
+			var href = S(abspath).chompLeft(&quot;content&quot;).chompRight(&quot;.md&quot;).s;
+			if (filename === &quot;index.md&quot;) {
+				href = S(abspath).chompLeft(CONTENT_PATH_PREFIX).chompRight(filename).s;
+			}
+
+			// 移除非内容的元素
+			var content = body[2].trim();
+			content = marked(content);
+			content = content.replace(/\&lt;script.*\/script\&gt;/g,&quot;&quot;);
+			content = Html.decode(content);
+			content = content.replace(/(&lt;([^&gt;]+)&gt;)/ig, '');
+			content = content.replace(/[\n,\r ]+/g, ' ');
+			
+			// 可以根据目标文件的格式定义不同的结构体
+			var doc = {
+				url: href.slice(1),
+                title: frontMatter.title,
+                date: frontMatter.date,
+                tags: frontMatter.tags,
+				body: content
+			};
+
+			documentsStore[href] = doc;
+		};
+		
+		// 生成的索引文件
+		grunt.file.write(INDEX_JSON_FILE_PATH, JSON.stringify(indexPages()));
+        grunt.log.ok(&quot;Index built&quot;);
+    });
+};
+</code></pre>
+
+<ol>
+<li>执行</li>
+</ol>
+
+<pre><code>grunt index
+</code></pre>
+
+<h1 id="编写搜索逻辑">编写搜索逻辑</h1>
+
+<p>搜索逻辑如下：</p>
+
+<pre><code>var $results, INDEX_DATA={};
+    // 加载索引文件
+    function initLunr() {
+        // First retrieve the index file
+        $.getJSON('/lunr.json')
+            .done(function(data) {
+                INDEX_DATA = data;
+            })
+            .fail(function(jqxhr, textStatus, error) {
+                var err = textStatus + &quot;, &quot; + error;
+                console.error(&quot;Error getting Hugo index flie:&quot;, err);
+            });
+    }
+    // 开始搜素
+    function initUI() {
+        $results = $(&quot;.content&quot;);
+        $('#search').on('click',function(){
+            $('.content').html(&quot;&quot;);
+            var query = $(&quot;#search-input&quot;).val();
+
+            var results = search(query,500);
+            // 无搜索结果
+            if(results === undefined|| results.length===0){
+                $(&quot;#content-post .noresult&quot;).remove();
+                $results.append(&quot;&lt;h1 class='noresult'&gt;很抱歉，我们没有找到与“&quot;+query+&quot;“相关的博客&lt;/h1&gt;&quot;);
+            }
+            else{
+                renderResults(results);
+            }
+        });
+    }
+    
+    function escapeReg(keyword) {
+        //escape regexp prevserve word
+        return String(keyword).replace(/([\*\.\?\+\$\^\[\]\(\)\{\}\|\/\\])/g, '\\$1');
+    }
+    
+    // 搜索匹配结果
+    function search(keyword,MAX_DESCRIPTION_SIZE) {
+        if (keyword == null || keyword.trim() === '') return;
+    
+        var results = [],
+            index = -1;
+        for (var page in INDEX_DATA) {
+            if ((index = INDEX_DATA[page].body.toLowerCase().indexOf(keyword.toLowerCase())) !== -1) {
+                results.push({
+                    url: INDEX_DATA[page].url,
+                    title: INDEX_DATA[page].title,
+                    date: INDEX_DATA[page].date,
+                    tags: INDEX_DATA[page].tags,
+                    body: INDEX_DATA[page].body.substr(Math.max(0, index - 50), MAX_DESCRIPTION_SIZE).replace(new RegExp('(' + escapeReg(keyword) + ')', 'gi'), '&lt;span style=&quot;background:#ff0;&quot;&gt;$1&lt;/span&gt;')
+                });
+            }
+        }
+        return results;
+    }
+    
+    // 将搜索结果添加到界面上
+    function renderResults(results) {
+        if (!results.length) {
+            return;
+        }
+        $(&quot;.content .noresult&quot;).remove();
+        // 只显示10条
+        results.slice(0, 10).forEach(function(result) {
+            var $result = $('&lt;article class=&quot;post&quot;&gt;');
+            $result.append('&lt;h1&gt;&lt;a href=&quot;/'+ result.url.toLowerCase() +'&quot; title=&quot;'+ result.title +'&quot;&gt;'+ result.title +'&lt;/a&gt;&lt;/h1&gt;');
+
+            var $footer = $('&lt;footer class=&quot;post-info&quot;&gt;Posted on');
+
+            var $span = $('&lt;span class=&quot;post-meta&quot;&gt;');
+            $span.append('&lt;time datetime=&quot;'+ result.date +'&quot;&gt;'+ result.date +'&lt;/time&gt;· Tagged in');
+            for (index=0; index &lt; result.tags.length; index++){
+                $span.append('&lt;a href=&quot;/tags/'+ result.tags[index].toLowerCase() +'&quot;&gt;'+result.tags[index]+'&lt;/a&gt;')
+            }
+            $span.append('&lt;/span&gt;');
+
+            $footer.append($span);
+            $footer.append('&lt;/footer&gt;');
+            
+            $result.append($footer);
+            $result.append('&lt;div&gt;'+result.body +'&lt;/div&gt;');
+            $result.append('&lt;a href=&quot;/' + result.url.toLowerCase() +'&quot; title=&quot;'+ result.title +'&quot;&gt;Read more »&lt;/a&gt;');
+            $result.append('&lt;/article&gt;');
+            $results.append($result);
+        });
+    }
+
+    $(document).ready(function() {
+        initLunr();
+        initUI();
+    });
+</code></pre>
+
+<h1 id="最终效果">最终效果</h1>
+
+<p><img src="/img/hugoSearch.jpg" alt="" /></p>
+
+            <ul class="share-buttons">
+    
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            
+            
+            
+            
+            
+            <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDM5NS8xMDkzMg==">
+                <script type="text/javascript">
+                    (function(d, s) {
+                        var j, e = d.getElementsByTagName(s)[0];
+    
+                        if (typeof LivereTower === 'function') { return; }
+    
+                        j = d.createElement(s);
+                        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                        j.async = true;
+    
+                        e.parentNode.insertBefore(j, e);
+                    })(document, 'script');
+                </script>
+                <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                
+        </div>
+        
+    </main>
+    <aside class="author">
+	<script>
+  (function() {
+    var cx = '003852173732159005764:38fn-nyfxai';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="">
+    <input id="search-input" class="search-input" type="text" placeholder="请搜索博文关键字">
+    <button id="search" class="search-button" type="submit">搜索</button>
+</div>
+  <img class="profile-image" src="https://yooxinz.github.io/img/heard.png" alt="张永兴" />
+  <p class="name">by 
+  <strong>张永兴</strong></p>
+  <p class="address">陕西</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/yooxinz" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://yooxinz.github.io/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+    <div class="tags">
+  
+  <a class="tag" href="/tags/git"><i class=""></i>git</a>
+  
+  <a class="tag" href="/tags/github"><i class=""></i>github</a>
+  
+  <a class="tag" href="/tags/hugo"><i class=""></i>hugo</a>
+  
+  <a class="tag" href="/tags/java"><i class=""></i>java</a>
+  
+  <a class="tag" href="/tags/sonarqube"><i class=""></i>sonarqube</a>
+  
+</div>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://yooxinz.github.io/post/index.xml" title="RSS"></a>
+        <p>&copy; 2018 &middot; 
+        
+        </p>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://yooxinz.github.io/search.js" type="text/javascript"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/cdn.bootcss.com\/jquery\/1.11.0\/jquery.min.js"><\/script>')</script>
+
+
+
+
+</body>
+</html>
+

@@ -7,7 +7,7 @@
         <meta name="author">
         <meta name="description" content="张永兴的个人博客">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.49.2" />
+        <meta name="generator" content="Hugo 0.52" />
         <link href='https://yooxinz.github.io/post/index.xml' rel="alternate" type="application/rss+xml" title="张永兴的博客" />
         <link href='https://yooxinz.github.io/post/index.xml' rel="feed" type="application/rss+xml" title="张永兴的博客" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -42,17 +42,11 @@
         
             <article class="post">
     
-<h1><a href="https://yooxinz.github.io/post/githubblogdomainbinding/" title="github博客域名绑定">github博客域名绑定</a></h1>
+<h1><a href="https://yooxinz.github.io/post/hugosearch/" title="实现Hugo中的搜索功能">实现Hugo中的搜索功能</a></h1>
 
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.07.25">2017.07.25</time>
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2018.12.17">2018.12.17</time>
 
     &middot; Tagged in
-        
-        <a href="https://yooxinz.github.io/tags/blog">blog</a>, 
-        
-        <a href="https://yooxinz.github.io/tags/github">github</a>, 
-        
-        <a href="https://yooxinz.github.io/tags/domain">domain</a>, 
         
         <a href="https://yooxinz.github.io/tags/hugo">hugo</a>
         
@@ -61,10 +55,9 @@
 </span>
 </footer>
 
-    <p>github博客域名绑定 通过github创建的blog绑定域名时出现不加载js,css.可以尝试该方法
-hugo的config.toml文件中需要指定访问地址
-baseurl = &quot;<a href="https://githubname.github.io&quot;">https://githubname.github.io&quot;</a>  这里的baseurl必须指向blog的github地址.&hellip;</p>
-    <a href="https://yooxinz.github.io/post/githubblogdomainbinding/" title="github博客域名绑定">Read more &raquo;</a>
+    <p>安装需要的组件 安装Grunt npm install -g grunt-cli  安装需要的包工具 npm install &ndash;save-dev toml string html-entities marked grunt  生成索引文件  新建Gruntfile文件，并修改其中相关参数。   CONTENT_PATH_PREFIX：要搜索的内容路径 FILE_SUFFIX：目标文件的文件后缀名 FILE_SPLIT：文章头部分隔符 INDEX_JSON_FILE_PATH：最终生成的索引文件的路径  Gruntfile.js内容如下：
+var toml = require(&quot;toml&quot;); var S = require(&quot;string&quot;); var Entities = require(&lsquo;html-entities&rsquo;).AllHtmlEntities; var Html = new Entities(); var marked = require(&quot;marked&quot;); var CONTENT_PATH_PREFIX = &quot;./content/post&quot;; var FILE_SUFFIX = &quot;.md&quot;; var FILE_SPLIT = &quot;+++&quot;; var INDEX_JSON_FILE_PATH = &quot;./static/lunr.json&quot;; var documentsStore = {}; module.&hellip;</p>
+    <a href="https://yooxinz.github.io/post/hugosearch/" title="实现Hugo中的搜索功能">Read more &raquo;</a>
 </article>
 
         
@@ -125,23 +118,15 @@ baseurl = &quot;<a href="https://githubname.github.io&quot;">https://githubname.
   <br><br>
     <div class="tags">
   
-  <a class="tag" href="/tags/blog"><i class=""></i>blog</a>
-  
-  <a class="tag" href="/tags/domain"><i class=""></i>domain</a>
-  
   <a class="tag" href="/tags/git"><i class=""></i>git</a>
   
   <a class="tag" href="/tags/github"><i class=""></i>github</a>
-  
-  <a class="tag" href="/tags/http"><i class=""></i>http</a>
   
   <a class="tag" href="/tags/hugo"><i class=""></i>hugo</a>
   
   <a class="tag" href="/tags/java"><i class=""></i>java</a>
   
-  <a class="tag" href="/tags/reflect"><i class=""></i>reflect</a>
-  
-  <a class="tag" href="/tags/resource"><i class=""></i>resource</a>
+  <a class="tag" href="/tags/sonarqube"><i class=""></i>sonarqube</a>
   
 </div>
 </aside>

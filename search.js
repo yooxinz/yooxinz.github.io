@@ -1,4 +1,5 @@
 var $results, INDEX_DATA={};
+    // 加载索引文件
     function initLunr() {
         // First retrieve the index file
         $.getJSON('/lunr.json')
@@ -10,6 +11,7 @@ var $results, INDEX_DATA={};
                 console.error("Error getting Hugo index flie:", err);
             });
     }
+    // 开始搜素
     function initUI() {
         $results = $(".content");
         $('#search').on('click',function(){
@@ -27,11 +29,13 @@ var $results, INDEX_DATA={};
             }
         });
     }
+    
     function escapeReg(keyword) {
         //escape regexp prevserve word
         return String(keyword).replace(/([\*\.\?\+\$\^\[\]\(\)\{\}\|\/\\])/g, '\\$1');
     }
     
+    // 搜索匹配结果
     function search(keyword,MAX_DESCRIPTION_SIZE) {
         if (keyword == null || keyword.trim() === '') return;
     
@@ -51,13 +55,13 @@ var $results, INDEX_DATA={};
         return results;
     }
     
-
+    // 将搜索结果添加到界面上
     function renderResults(results) {
         if (!results.length) {
             return;
         }
         $(".content .noresult").remove();
-        // Only show the ten first results
+        // 只显示10条
         results.slice(0, 10).forEach(function(result) {
             var $result = $('<article class="post">');
             $result.append('<h1><a href="/'+ result.url.toLowerCase() +'" title="'+ result.title +'">'+ result.title +'</a></h1>');
