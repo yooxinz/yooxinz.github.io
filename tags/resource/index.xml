@@ -2,22 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Resource on 张永兴的博客</title>
-    <link>https://yooxinz.github.io/tags/resource/</link>
+    <link>http://c7n.eg.com/tags/resource/</link>
     <description>Recent content in Resource on 张永兴的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 09 Aug 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://yooxinz.github.io/tags/resource/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://c7n.eg.com/tags/resource/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Java中获取资源文件</title>
-      <link>https://yooxinz.github.io/post/javagetresource/</link>
+      <link>http://c7n.eg.com/post/javagetresource/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yooxinz.github.io/post/javagetresource/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
+      <guid>http://c7n.eg.com/post/javagetresource/</guid>
+      <description>Java中获取资源文件 Java中可以通过getClass().getResource()方法获取资源文件
+比如我们有以下目录
+|--project |--src |--main |--java |--Test.java |--file.txt |--target |--classes |--Test.class |--file.txt  现在要在Test.java中获取file文件
+getClass().getResource(&amp;quot;file.txt&amp;quot;)  或者
+getClass().getResource(&amp;quot;/file.txt&amp;quot;)  这里指定的路径可以为以Test.class为相对路径,也可以指定以classes为根的绝对路径</description>
     </item>
     
   </channel>
