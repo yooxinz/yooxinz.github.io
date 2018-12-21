@@ -4,6 +4,8 @@ tags = ["java"]
 title = "Java模拟发送http请求"
 +++
 
+基于Java模拟http请求发送，其中包含实际代码。
+
 ## 导航
 * [工具类](#util)
 * [实现类](#impl)

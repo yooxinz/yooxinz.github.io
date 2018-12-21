@@ -13,3 +13,8 @@ hugo server -w
 grunt index
 hugo
 ```
+
+待优化：
+1. 论坛
+1. 搜索功能
+1. 添加自动构建CI

@@ -1,6 +1,8 @@
 baseurl = "https://yooxinz.github.io"
 languageCode = "en-us"
 title = "张永兴的博客"
+hasCJKLanguage = true
+summaryLength = 25
 # Define how many pages appear per site
 paginate = 5
 # Enable comments powered by Disqus by entering your disqus shortname

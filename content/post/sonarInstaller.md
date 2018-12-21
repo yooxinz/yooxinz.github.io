@@ -4,7 +4,8 @@ tags = ["sonarQube"]
 title = "SonarQube文档"
 +++
 
-# 1. sonar安装
+最近搭建SonarQube的一些安装心得，记录下来。
+
 ___
 * mysql初始化数据库
 

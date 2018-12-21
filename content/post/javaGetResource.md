@@ -4,7 +4,6 @@ tags = ["java"]
 title = "Java中获取资源文件"
 +++
 
-## Java中获取资源文件
 Java中可以通过getClass().getResource()方法获取资源文件
 
 比如我们有以下目录
