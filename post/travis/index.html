@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>张永兴的博客 &middot; 张永兴的博客</title>
+        <title>张永兴的博客</title>
         <meta name="author">
         <meta name="description" content="张永兴的个人博客">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,12 +35,12 @@
           </div>
         </header>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-        
-        
-            <article class="post">
-    
+        <article class="post">
+            <a class="btn home" href="https://yooxinz.github.io" title="Back to home">&laquo; Back to home</a>
+            
 <h1><a href="https://yooxinz.github.io/post/travis/" title="通过Travis-CI发布博客">通过Travis-CI发布博客</a></h1>
 
 <footer class="post-info">Posted on <span class="post-meta"><time datetime="2018.12.22">2018.12.22</time>
@@ -54,106 +54,79 @@
 </span>
 </footer>
 
-    <p>通过Travis CI使增加新博客后自动生成对应的站&hellip;</p>
-    <a href="https://yooxinz.github.io/post/travis/" title="通过Travis-CI发布博客">Read more &raquo;</a>
-</article>
+            
 
-        
-            <article class="post">
+<p>通过Travis CI使增加新博客后自动生成对应的站点并上传到Github Page中。</p>
+
+<h1 id="在github中生成personal-access-tokens">在Github中生成Personal access tokens</h1>
+
+<h1 id="添加认证信息">添加认证信息：</h1>
+
+<p>在你Travis CI 对应的仓库的Setting页中添加对应的环境变量，变量名为GITHUB_TOKEN，值为之前创建的Personal access tokens。</p>
+
+<h1 id="编写ci文件">编写CI文件</h1>
+
+<p>编写对应的.travis.yml文件</p>
+
+<pre><code>sudo: true
+dist: trusty
+
+install:
+  - sudo apt-get --yes install snapd
+  - sudo snap install hugo
+
+script:
+  - /snap/bin/hugo
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  target-branch: master
+  local-dir: public
+  on:
+    branch: src
+</code></pre>
+
+<p><a href="https://docs.travis-ci.com/user/deployment/pages/#stq=var&amp;stp=1">参数解释</a>：</p>
+
+<ul>
+<li>target-branch: 生成的站点目标推送分支</li>
+<li>local-dir: 生成站点所在的文件夹路径</li>
+</ul>
+
+            <ul class="share-buttons">
     
-<h1><a href="https://yooxinz.github.io/post/gitstudy/" title="可视化学习Git">可视化学习Git</a></h1>
+</ul>
 
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2018.12.20">2018.12.20</time>
-
-    &middot; Tagged in
+        </article>
         
-        <a href="https://yooxinz.github.io/tags/git">git</a>
-        
+        <div class="comments">
+            
+            
+            
+            
+            
+            <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDM5NS8xMDkzMg==">
+                <script type="text/javascript">
+                    (function(d, s) {
+                        var j, e = d.getElementsByTagName(s)[0];
     
-
-</span>
-</footer>
-
-    <p>给大家推荐一个Git学习工具LearnGitBra&hellip;</p>
-    <a href="https://yooxinz.github.io/post/gitstudy/" title="可视化学习Git">Read more &raquo;</a>
-</article>
-
-        
-            <article class="post">
+                        if (typeof LivereTower === 'function') { return; }
     
-<h1><a href="https://yooxinz.github.io/post/hugosearch/" title="实现Hugo中的搜索功能">实现Hugo中的搜索功能</a></h1>
-
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2018.12.17">2018.12.17</time>
-
-    &middot; Tagged in
-        
-        <a href="https://yooxinz.github.io/tags/hugo">hugo</a>
-        
+                        j = d.createElement(s);
+                        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                        j.async = true;
     
-
-</span>
-</footer>
-
-    <p>基于Grunt实现Hugo中的搜索功能，先生成索引&hellip;</p>
-    <a href="https://yooxinz.github.io/post/hugosearch/" title="实现Hugo中的搜索功能">Read more &raquo;</a>
-</article>
-
+                        e.parentNode.insertBefore(j, e);
+                    })(document, 'script');
+                </script>
+                <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                
+        </div>
         
-            <article class="post">
-    
-<h1><a href="https://yooxinz.github.io/post/javagetattributebyreflect/" title="Java反射获取实体属性">Java反射获取实体属性</a></h1>
-
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.09.19">2017.09.19</time>
-
-    &middot; Tagged in
-        
-        <a href="https://yooxinz.github.io/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>Java中可以通过反射获取未知实体的属性 Field field=message.getClass().getDeclaredField(&quot;value&quot;); field.setAccessible(true); field.get(message);&hellip;</p>
-    <a href="https://yooxinz.github.io/post/javagetattributebyreflect/" title="Java反射获取实体属性">Read more &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://yooxinz.github.io/post/javagetresource/" title="Java中获取资源文件">Java中获取资源文件</a></h1>
-
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
-
-    &middot; Tagged in
-        
-        <a href="https://yooxinz.github.io/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>Java中可以通过getClass().getRe&hellip;</p>
-    <a href="https://yooxinz.github.io/post/javagetresource/" title="Java中获取资源文件">Read more &raquo;</a>
-</article>
-
-        
-        <div class="pagination">
-<nav>
-
-    
-
-	<p class="counter">Page 1 of 2</p>
-
-
-	
-	<a class="btn older" href="/page/2/" title="Older">Older &raquo;</a>
-	
-
-</nav>
-</div>
-
     </main>
     <aside class="author">
 	<script>
