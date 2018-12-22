@@ -6,4 +6,14 @@ install:
   - sudo snap install hugo
 
 script:
-  - /snap/bin/hugo new site test-site
+  - /snap/bin/hugo
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  target-branch: master
+  local-dir: public
+  on:
+    branch: src
