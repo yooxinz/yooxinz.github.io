@@ -17,9 +17,7 @@
       <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yooxinz.github.io/post/githubblogdomainbinding/</guid>
-      <description>github博客域名绑定 通过github创建的blog绑定域名时出现不加载js,css.可以尝试该方法
-hugo的config.toml文件中需要指定访问地址
-baseurl = &amp;quot;https://githubname.github.io&amp;quot;  这里的baseurl必须指向blog的github地址.</description>
+      <description>通过github创建的blog绑定域名时出现不加载</description>
     </item>
     
   </channel>

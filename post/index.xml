@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 张永兴的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://yooxinz.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>可视化学习Git</title>
+      <link>https://yooxinz.github.io/post/gitstudy/</link>
+      <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://yooxinz.github.io/post/gitstudy/</guid>
+      <description>给大家推荐一个Git学习工具LearnGitBra</description>
+    </item>
     
     <item>
       <title>实现Hugo中的搜索功能</title>
@@ -17,8 +26,7 @@
       <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://yooxinz.github.io/post/hugosearch/</guid>
-      <description>安装需要的组件 安装Grunt npm install -g grunt-cli  安装需要的包工具 npm install --save-dev toml string html-entities marked grunt  生成索引文件  新建Gruntfile文件，并修改其中相关参数。   CONTENT_PATH_PREFIX：要搜索的内容路径 FILE_SUFFIX：目标文件的文件后缀名 FILE_SPLIT：文章头部分隔符 INDEX_JSON_FILE_PATH：最终生成的索引文件的路径  Gruntfile.js内容如下：
-var toml = require(&amp;quot;toml&amp;quot;); var S = require(&amp;quot;string&amp;quot;); var Entities = require(&#39;html-entities&#39;).AllHtmlEntities; var Html = new Entities(); var marked = require(&amp;quot;marked&amp;quot;); var CONTENT_PATH_PREFIX = &amp;quot;./content/post&amp;quot;; var FILE_SUFFIX = &amp;quot;.md&amp;quot;; var FILE_SPLIT = &amp;quot;+++&amp;quot;; var INDEX_JSON_FILE_PATH = &amp;quot;./static/lunr.json&amp;quot;; var documentsStore = {}; module.</description>
+      <description>基于Grunt实现Hugo中的搜索功能，先生成索引</description>
     </item>
     
     <item>
@@ -27,8 +35,7 @@ var toml = require(&amp;quot;toml&amp;quot;); var S = require(&amp;quot;string&a
       <pubDate>Tue, 19 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yooxinz.github.io/post/javagetattributebyreflect/</guid>
-      <description> Java反射获取实体属性 Java中可以听过反射获取未知实体的属性
-Field field=message.getClass().getDeclaredField(&amp;quot;value&amp;quot;); field.setAccessible(true); field.get(message);  </description>
+      <description>Java中可以通过反射获取未知实体的属性 Field field=message.getClass().getDeclaredField(&amp;quot;value&amp;quot;); field.setAccessible(true); field.get(message);</description>
     </item>
     
     <item>
@@ -37,11 +44,7 @@ Field field=message.getClass().getDeclaredField(&amp;quot;value&amp;quot;); fiel
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yooxinz.github.io/post/javagetresource/</guid>
-      <description>Java中获取资源文件 Java中可以通过getClass().getResource()方法获取资源文件
-比如我们有以下目录
-|--project |--src |--main |--java |--Test.java |--file.txt |--target |--classes |--Test.class |--file.txt  现在要在Test.java中获取file文件
-getClass().getResource(&amp;quot;file.txt&amp;quot;)  或者
-getClass().getResource(&amp;quot;/file.txt&amp;quot;)  这里指定的路径可以为以Test.class为相对路径,也可以指定以classes为根的绝对路径</description>
+      <description>Java中可以通过getClass().getRe</description>
     </item>
     
     <item>
@@ -50,9 +53,7 @@ getClass().getResource(&amp;quot;/file.txt&amp;quot;)  这里指定的路径可�
       <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yooxinz.github.io/post/githubblogdomainbinding/</guid>
-      <description>github博客域名绑定 通过github创建的blog绑定域名时出现不加载js,css.可以尝试该方法
-hugo的config.toml文件中需要指定访问地址
-baseurl = &amp;quot;https://githubname.github.io&amp;quot;  这里的baseurl必须指向blog的github地址.</description>
+      <description>通过github创建的blog绑定域名时出现不加载</description>
     </item>
     
     <item>
@@ -61,7 +62,7 @@ baseurl = &amp;quot;https://githubname.github.io&amp;quot;  这里的baseurl必�
       <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yooxinz.github.io/post/gitignore/</guid>
-      <description> 先创建的项目后添加.gitignore文件时遇到不生效的情况   git rm -r --cached . git add . git commit -m &#39;update .gitignore&#39;  </description>
+      <description>先创建的项目后添加.gitignore文件时遇到不</description>
     </item>
     
     <item>
@@ -70,11 +71,7 @@ baseurl = &amp;quot;https://githubname.github.io&amp;quot;  这里的baseurl必�
       <pubDate>Sat, 29 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yooxinz.github.io/post/sonarinstaller/</guid>
-      <description>1. sonar安装  mysql初始化数据库  CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci; CREATE USER &#39;sonar&#39; IDENTIFIED BY &#39;sonar&#39;; GRANT ALL ON sonar.* TO &#39;sonar&#39;@&#39;%&#39; IDENTIFIED BY &#39;sonar&#39;; GRANT ALL ON sonar.* TO &#39;sonar&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;sonar&#39;; FLUSH PRIVILEGES;   SonarQube  下载地址
-配置SonarQube服务器sonar.properties
-sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;rewriteBatchedStatements=true&amp;amp;useConfigs=maxPerformance sonar.jdbc.username=sonar sonar.jdbc.password=sonar sonar.sorceEncoding=UTF-8 sonar.login=admin sonar.password=admin   SonarScanner  下载地址
-SonarScanner配置文件sonar-scanner.properties
-sonar.host.url=http://localhost:9000 sonar.projectKey=hmall-test sonar.projectName=hmall-test sonar.sources=src sonar.language=java sonar.login=admin sonar.password=admin  2.sonarLint安装  安装sonarLint插件  idea&amp;ndash;plugns中查找sonarLint插件，并安装；安装完成后，重启idea；</description>
+      <description>最近搭建SonarQube的一些安装心得，记录下来</description>
     </item>
     
     <item>
@@ -83,8 +80,7 @@ sonar.host.url=http://localhost:9000 sonar.projectKey=hmall-test sonar.projectNa
       <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yooxinz.github.io/post/javasendhttp/</guid>
-      <description>导航  工具类 实现类
-工具类  import java.io.UnsupportedEncodingException; import java.net.URLEncoder; import java.security.KeyManagementException; import java.security.NoSuchAlgorithmException; import java.security.cert.X509Certificate; import java.util.ArrayList; import java.util.List; import java.util.Map; import javax.net.ssl.SSLContext; import javax.net.ssl.TrustManager; import javax.net.ssl.X509TrustManager; import clover.org.apache.commons.lang.StringUtils; import org.apache.http.HttpResponse; import org.apache.http.NameValuePair; import org.apache.http.client.HttpClient; import org.apache.http.client.entity.UrlEncodedFormEntity; import org.apache.http.client.methods.HttpDelete; import org.apache.http.client.methods.HttpGet; import org.apache.http.client.methods.HttpPost; import org.apache.http.client.methods.HttpPut; import org.apache.http.conn.ClientConnectionManager; import org.apache.http.conn.scheme.Scheme; import org.apache.http.conn.scheme.SchemeRegistry; import org.apache.http.conn.ssl.SSLSocketFactory; import org.apache.http.entity.ByteArrayEntity; import org.apache.http.entity.StringEntity; import org.apache.http.impl.client.DefaultHttpClient; import org.apache.http.message.BasicNameValuePair; import org.slf4j.Logger; import org.slf4j.LoggerFactory; public class HttpUtils { /** * get * * @param host * @param path * @param method * @param headers * @param querys * @return * @throws Exception */ public static HttpResponse doGet(String host, String path, String method, Map&amp;lt;String, String&amp;gt; headers, Map&amp;lt;String, String&amp;gt; querys) throws Exception { HttpClient httpClient = wrapClient(host); HttpGet request = new HttpGet(buildUrl(host, path, querys)); for (Map.</description>
+      <description>基于Java模拟http请求发送，其中包含实际代码</description>
     </item>
     
   </channel>

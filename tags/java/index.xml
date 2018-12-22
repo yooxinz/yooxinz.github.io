@@ -17,8 +17,7 @@
       <pubDate>Tue, 19 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yooxinz.github.io/post/javagetattributebyreflect/</guid>
-      <description> Java反射获取实体属性 Java中可以听过反射获取未知实体的属性
-Field field=message.getClass().getDeclaredField(&amp;quot;value&amp;quot;); field.setAccessible(true); field.get(message);  </description>
+      <description>Java中可以通过反射获取未知实体的属性 Field field=message.getClass().getDeclaredField(&amp;quot;value&amp;quot;); field.setAccessible(true); field.get(message);</description>
     </item>
     
     <item>
@@ -27,11 +26,7 @@ Field field=message.getClass().getDeclaredField(&amp;quot;value&amp;quot;); fiel
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yooxinz.github.io/post/javagetresource/</guid>
-      <description>Java中获取资源文件 Java中可以通过getClass().getResource()方法获取资源文件
-比如我们有以下目录
-|--project |--src |--main |--java |--Test.java |--file.txt |--target |--classes |--Test.class |--file.txt  现在要在Test.java中获取file文件
-getClass().getResource(&amp;quot;file.txt&amp;quot;)  或者
-getClass().getResource(&amp;quot;/file.txt&amp;quot;)  这里指定的路径可以为以Test.class为相对路径,也可以指定以classes为根的绝对路径</description>
+      <description>Java中可以通过getClass().getRe</description>
     </item>
     
     <item>
@@ -40,8 +35,7 @@ getClass().getResource(&amp;quot;/file.txt&amp;quot;)  这里指定的路径可�
       <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://yooxinz.github.io/post/javasendhttp/</guid>
-      <description>导航  工具类 实现类
-工具类  import java.io.UnsupportedEncodingException; import java.net.URLEncoder; import java.security.KeyManagementException; import java.security.NoSuchAlgorithmException; import java.security.cert.X509Certificate; import java.util.ArrayList; import java.util.List; import java.util.Map; import javax.net.ssl.SSLContext; import javax.net.ssl.TrustManager; import javax.net.ssl.X509TrustManager; import clover.org.apache.commons.lang.StringUtils; import org.apache.http.HttpResponse; import org.apache.http.NameValuePair; import org.apache.http.client.HttpClient; import org.apache.http.client.entity.UrlEncodedFormEntity; import org.apache.http.client.methods.HttpDelete; import org.apache.http.client.methods.HttpGet; import org.apache.http.client.methods.HttpPost; import org.apache.http.client.methods.HttpPut; import org.apache.http.conn.ClientConnectionManager; import org.apache.http.conn.scheme.Scheme; import org.apache.http.conn.scheme.SchemeRegistry; import org.apache.http.conn.ssl.SSLSocketFactory; import org.apache.http.entity.ByteArrayEntity; import org.apache.http.entity.StringEntity; import org.apache.http.impl.client.DefaultHttpClient; import org.apache.http.message.BasicNameValuePair; import org.slf4j.Logger; import org.slf4j.LoggerFactory; public class HttpUtils { /** * get * * @param host * @param path * @param method * @param headers * @param querys * @return * @throws Exception */ public static HttpResponse doGet(String host, String path, String method, Map&amp;lt;String, String&amp;gt; headers, Map&amp;lt;String, String&amp;gt; querys) throws Exception { HttpClient httpClient = wrapClient(host); HttpGet request = new HttpGet(buildUrl(host, path, querys)); for (Map.</description>
+      <description>基于Java模拟http请求发送，其中包含实际代码</description>
     </item>
     
   </channel>

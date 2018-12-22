@@ -55,14 +55,7 @@
 </span>
 </footer>
 
-    <p><ol>
-<li>sonar安装  mysql初始化数据库  CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci; CREATE USER &lsquo;sonar&rsquo; IDENTIFIED BY &lsquo;sonar&rsquo;; GRANT ALL ON sonar.* TO &lsquo;sonar&rsquo;@&lsquo;%&rsquo; IDENTIFIED BY &lsquo;sonar&rsquo;; GRANT ALL ON sonar.* TO &lsquo;sonar&rsquo;@&lsquo;localhost&rsquo; IDENTIFIED BY &lsquo;sonar&rsquo;; FLUSH PRIVILEGES;   SonarQube  下载地址
-配置SonarQube服务器sonar.properties
-sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance sonar.jdbc.username=sonar sonar.jdbc.password=sonar sonar.sorceEncoding=UTF-8 sonar.login=admin sonar.password=admin   SonarScanner  下载地址
-SonarScanner配置文件sonar-scanner.properties
-sonar.host.url=<a href="http://localhost:9000">http://localhost:9000</a> sonar.projectKey=hmall-test sonar.projectName=hmall-test sonar.sources=src sonar.language=java sonar.login=admin sonar.password=admin  2.sonarLint安装  安装sonarLint插件  idea&ndash;plugns中查找sonarLint插件，并安装；安装完成后，重启idea；</li>
-</ol>
-&hellip;</p>
+    <p>最近搭建SonarQube的一些安装心得，记录下来&hellip;</p>
     <a href="https://yooxinz.github.io/post/sonarinstaller/" title="SonarQube文档">Read more &raquo;</a>
 </article>
 

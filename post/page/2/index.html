@@ -42,6 +42,26 @@
         
             <article class="post">
     
+<h1><a href="https://yooxinz.github.io/post/gitignore/" title="Git忽略规则及.gitignore规则不生效的解决办法">Git忽略规则及.gitignore规则不生效的解决办法</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.05.01">2017.05.01</time>
+
+    &middot; Tagged in
+        
+        <a href="https://yooxinz.github.io/tags/git">git</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>先创建的项目后添加.gitignore文件时遇到不&hellip;</p>
+    <a href="https://yooxinz.github.io/post/gitignore/" title="Git忽略规则及.gitignore规则不生效的解决办法">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://yooxinz.github.io/post/sonarinstaller/" title="SonarQube文档">SonarQube文档</a></h1>
 
 <footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.04.29">2017.04.29</time>
@@ -55,14 +75,7 @@
 </span>
 </footer>
 
-    <p><ol>
-<li>sonar安装  mysql初始化数据库  CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci; CREATE USER &lsquo;sonar&rsquo; IDENTIFIED BY &lsquo;sonar&rsquo;; GRANT ALL ON sonar.* TO &lsquo;sonar&rsquo;@&lsquo;%&rsquo; IDENTIFIED BY &lsquo;sonar&rsquo;; GRANT ALL ON sonar.* TO &lsquo;sonar&rsquo;@&lsquo;localhost&rsquo; IDENTIFIED BY &lsquo;sonar&rsquo;; FLUSH PRIVILEGES;   SonarQube  下载地址
-配置SonarQube服务器sonar.properties
-sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance sonar.jdbc.username=sonar sonar.jdbc.password=sonar sonar.sorceEncoding=UTF-8 sonar.login=admin sonar.password=admin   SonarScanner  下载地址
-SonarScanner配置文件sonar-scanner.properties
-sonar.host.url=<a href="http://localhost:9000">http://localhost:9000</a> sonar.projectKey=hmall-test sonar.projectName=hmall-test sonar.sources=src sonar.language=java sonar.login=admin sonar.password=admin  2.sonarLint安装  安装sonarLint插件  idea&ndash;plugns中查找sonarLint插件，并安装；安装完成后，重启idea；</li>
-</ol>
-&hellip;</p>
+    <p>最近搭建SonarQube的一些安装心得，记录下来&hellip;</p>
     <a href="https://yooxinz.github.io/post/sonarinstaller/" title="SonarQube文档">Read more &raquo;</a>
 </article>
 
@@ -82,8 +95,7 @@ sonar.host.url=<a href="http://localhost:9000">http://localhost:9000</a> sonar.p
 </span>
 </footer>
 
-    <p>导航  工具类 实现类
-工具类  import java.io.UnsupportedEncodingException; import java.net.URLEncoder; import java.security.KeyManagementException; import java.security.NoSuchAlgorithmException; import java.security.cert.X509Certificate; import java.util.ArrayList; import java.util.List; import java.util.Map; import javax.net.ssl.SSLContext; import javax.net.ssl.TrustManager; import javax.net.ssl.X509TrustManager; import clover.org.apache.commons.lang.StringUtils; import org.apache.http.HttpResponse; import org.apache.http.NameValuePair; import org.apache.http.client.HttpClient; import org.apache.http.client.entity.UrlEncodedFormEntity; import org.apache.http.client.methods.HttpDelete; import org.apache.http.client.methods.HttpGet; import org.apache.http.client.methods.HttpPost; import org.apache.http.client.methods.HttpPut; import org.apache.http.conn.ClientConnectionManager; import org.apache.http.conn.scheme.Scheme; import org.apache.http.conn.scheme.SchemeRegistry; import org.apache.http.conn.ssl.SSLSocketFactory; import org.apache.http.entity.ByteArrayEntity; import org.apache.http.entity.StringEntity; import org.apache.http.impl.client.DefaultHttpClient; import org.apache.http.message.BasicNameValuePair; import org.slf4j.Logger; import org.slf4j.LoggerFactory; public class HttpUtils { /** * get * * @param host * @param path * @param method * @param headers * @param querys * @return * @throws Exception */ public static HttpResponse doGet(String host, String path, String method, Map&lt;String, String&gt; headers, Map&lt;String, String&gt; querys) throws Exception { HttpClient httpClient = wrapClient(host); HttpGet request = new HttpGet(buildUrl(host, path, querys)); for (Map.&hellip;</p>
+    <p>基于Java模拟http请求发送，其中包含实际代码&hellip;</p>
     <a href="https://yooxinz.github.io/post/javasendhttp/" title="Java模拟发送http请求">Read more &raquo;</a>
 </article>
 

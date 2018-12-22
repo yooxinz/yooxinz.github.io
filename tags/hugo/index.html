@@ -55,8 +55,7 @@
 </span>
 </footer>
 
-    <p>安装需要的组件 安装Grunt npm install -g grunt-cli  安装需要的包工具 npm install &ndash;save-dev toml string html-entities marked grunt  生成索引文件  新建Gruntfile文件，并修改其中相关参数。   CONTENT_PATH_PREFIX：要搜索的内容路径 FILE_SUFFIX：目标文件的文件后缀名 FILE_SPLIT：文章头部分隔符 INDEX_JSON_FILE_PATH：最终生成的索引文件的路径  Gruntfile.js内容如下：
-var toml = require(&quot;toml&quot;); var S = require(&quot;string&quot;); var Entities = require(&lsquo;html-entities&rsquo;).AllHtmlEntities; var Html = new Entities(); var marked = require(&quot;marked&quot;); var CONTENT_PATH_PREFIX = &quot;./content/post&quot;; var FILE_SUFFIX = &quot;.md&quot;; var FILE_SPLIT = &quot;+++&quot;; var INDEX_JSON_FILE_PATH = &quot;./static/lunr.json&quot;; var documentsStore = {}; module.&hellip;</p>
+    <p>基于Grunt实现Hugo中的搜索功能，先生成索引&hellip;</p>
     <a href="https://yooxinz.github.io/post/hugosearch/" title="实现Hugo中的搜索功能">Read more &raquo;</a>
 </article>
 
