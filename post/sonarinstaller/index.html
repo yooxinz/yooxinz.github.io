@@ -7,7 +7,7 @@
         <meta name="author">
         <meta name="description" content="张永兴的个人博客">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.52" />
+        <meta name="generator" content="Hugo 0.55.6" />
         <link href='https://yooxinz.github.io/post/index.xml' rel="alternate" type="application/rss+xml" title="张永兴的博客" />
         <link href='https://yooxinz.github.io/post/index.xml' rel="feed" type="application/rss+xml" title="张永兴的博客" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -61,18 +61,16 @@
 <hr />
 
 <ul>
-<li>mysql初始化数据库</li>
-</ul>
+<li><p>mysql初始化数据库</p>
 
 <pre><code>CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci; 
 CREATE USER 'sonar' IDENTIFIED BY 'sonar';
 GRANT ALL ON sonar.* TO 'sonar'@'%' IDENTIFIED BY 'sonar';
 GRANT ALL ON sonar.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar';
 FLUSH PRIVILEGES;
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>SonarQube</li>
+<li><p>SonarQube</p></li>
 </ul>
 
 <p><a href="https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.3.1.zip">下载地址</a></p>
@@ -218,7 +216,7 @@ sonar.password=admin
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="https://yooxinz.github.io/post/index.xml" title="RSS"></a>
-        <p>&copy; 2018 &middot; 
+        <p>&copy; 2019 &middot; 
         
         </p>
   </div>

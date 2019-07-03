@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>404 Page not found &middot; 张永兴的博客</title>
+        <title>张永兴的博客</title>
         <meta name="author">
         <meta name="description" content="张永兴的个人博客">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,11 +35,76 @@
           </div>
         </header>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
+        <article class="post">
             <a class="btn home" href="https://yooxinz.github.io" title="Back to home">&laquo; Back to home</a>
-            <h1>404 - page not found</h1>
-            <p>The content you&#39;re looking for doesn&#39;t seem to exist.</p>
+            
+<h1><a href="https://yooxinz.github.io/post/aslist/" title="Arrays.asList()学习">Arrays.asList()学习</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.08.22">2017.08.22</time>
+
+    &middot; Tagged in
+        
+        <a href="https://yooxinz.github.io/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<h1 id="arrays-aslist-是泛型方法-传入的对象必须是对象数组">Arrays.asList() 是泛型方法, 传入的对象必须是对象数组</h1>
+
+<pre><code>int[] myArray = { 1, 2, 3 };
+List myList = Arrays.asList(myArray);
+System.out.println(myList.size());//1
+System.out.println(myList.get(0));//数组地址值
+System.out.println(myList.get(1));//报错：ArrayIndexOutOfBoundsException
+</code></pre>
+
+<p>可以使用包装类数组解决:</p>
+
+<pre><code>Integer[] myArray = { 1, 2, 3 };
+</code></pre>
+
+<h1 id="arrays-aslist-使用集合的修改方法-add-remove-clear-会抛异常">Arrays.asList() 使用集合的修改方法: add(), remove(), clear()会抛异常</h1>
+
+<p>Arrays.asList() 方法返回的并不是 java.util.ArrayList ，而是 java.util.Arrays 的一个内部类,这个内部类并没有实现集合的修改方法或者说并没有重写这些方法。</p>
+
+            <ul class="share-buttons">
+    
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            
+            
+            
+            
+            
+            <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDM5NS8xMDkzMg==">
+                <script type="text/javascript">
+                    (function(d, s) {
+                        var j, e = d.getElementsByTagName(s)[0];
+    
+                        if (typeof LivereTower === 'function') { return; }
+    
+                        j = d.createElement(s);
+                        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                        j.async = true;
+    
+                        e.parentNode.insertBefore(j, e);
+                    })(document, 'script');
+                </script>
+                <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                
+        </div>
+        
     </main>
     <aside class="author">
 	<script>
@@ -101,6 +166,7 @@
 </aside>
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="https://yooxinz.github.io/post/index.xml" title="RSS"></a>

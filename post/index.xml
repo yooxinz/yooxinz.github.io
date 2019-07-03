@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Arrays.asList()学习</title>
+      <link>https://yooxinz.github.io/post/aslist/</link>
+      <pubDate>Tue, 22 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://yooxinz.github.io/post/aslist/</guid>
+      <description>Arrays.asList() 是泛型方法, 传入的对象必须是对象数组 int[] myArray = { 1, 2,</description>
+    </item>
+    
+    <item>
       <title>Java中获取资源文件</title>
       <link>https://yooxinz.github.io/post/javagetresource/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
