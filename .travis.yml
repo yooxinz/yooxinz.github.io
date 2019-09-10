@@ -3,6 +3,7 @@ dist: trusty
 
 install:
   - sudo apt-get --yes install snapd
+  - sudo snap find hugo
   - sudo snap install hugo
 
 script:
