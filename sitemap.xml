@@ -3,27 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yooxinz.github.io/tags/nginx/</loc>
+    <lastmod>2019-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yooxinz.github.io/post/nginxhttpsconfig/</loc>
+    <lastmod>2019-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yooxinz.github.io/post/</loc>
-    <lastmod>2018-12-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://yooxinz.github.io/tags/</loc>
-    <lastmod>2018-12-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yooxinz.github.io/</loc>
+    <lastmod>2019-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://yooxinz.github.io/tags/github/</loc>
     <lastmod>2018-12-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://yooxinz.github.io/</loc>
-    <lastmod>2018-12-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -34,7 +40,6 @@
   <url>
     <loc>https://yooxinz.github.io/tags/git/</loc>
     <lastmod>2018-12-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -45,7 +50,6 @@
   <url>
     <loc>https://yooxinz.github.io/tags/hugo/</loc>
     <lastmod>2018-12-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -54,14 +58,13 @@
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/post/javagetattributebyreflect/</loc>
+    <loc>https://yooxinz.github.io/tags/java/</loc>
     <lastmod>2017-09-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/tags/java/</loc>
+    <loc>https://yooxinz.github.io/post/javagetattributebyreflect/</loc>
     <lastmod>2017-09-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -85,14 +88,13 @@
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/post/sonarinstaller/</loc>
+    <loc>https://yooxinz.github.io/tags/sonarqube/</loc>
     <lastmod>2017-04-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/tags/sonarqube/</loc>
+    <loc>https://yooxinz.github.io/post/sonarinstaller/</loc>
     <lastmod>2017-04-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -102,7 +104,6 @@
   
   <url>
     <loc>https://yooxinz.github.io/categories/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>

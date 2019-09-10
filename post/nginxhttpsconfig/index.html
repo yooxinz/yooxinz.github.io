@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>张永兴的博客 &middot; 张永兴的博客</title>
+        <title>张永兴的博客</title>
         <meta name="author">
         <meta name="description" content="张永兴的个人博客">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.55.6" />
+        <meta name="generator" content="Hugo 0.58.0" />
         <link href='https://yooxinz.github.io/post/index.xml' rel="alternate" type="application/rss+xml" title="张永兴的博客" />
         <link href='https://yooxinz.github.io/post/index.xml' rel="feed" type="application/rss+xml" title="张永兴的博客" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -35,125 +35,91 @@
           </div>
         </header>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-        
-        
-            <article class="post">
-    
-<h1><a href="https://yooxinz.github.io/post/javagetresource/" title="Java中获取资源文件">Java中获取资源文件</a></h1>
+        <article class="post">
+            <a class="btn home" href="https://yooxinz.github.io" title="Back to home">&laquo; Back to home</a>
+            
+<h1><a href="https://yooxinz.github.io/post/nginxhttpsconfig/" title="nginx https认证">nginx https认证</a></h1>
 
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2019.09.09">2019.09.09</time>
 
     &middot; Tagged in
         
-        <a href="https://yooxinz.github.io/tags/java">java</a>
+        <a href="https://yooxinz.github.io/tags/nginx">nginx</a>
         
     
 
 </span>
 </footer>
 
-    <p>Java中可以通过getClass().getRe&hellip;</p>
-    <a href="https://yooxinz.github.io/post/javagetresource/" title="Java中获取资源文件">Read more &raquo;</a>
-</article>
+            
 
-        
-            <article class="post">
+<p>通过CertBot为nginx配置https。</p>
+
+<h1 id="先配置nginx">先配置nginx</h1>
+
+<pre><code>server {
+    server_name  taobao.yooxinz.com;
+
+    location / {
+       proxy_pass http://localhost:8080;
+    }
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+}
+</code></pre>
+
+<h1 id="安装下载certbot">安装下载certbot</h1>
+
+<h2 id="centos-rhel-7">CentOS/RHEL 7</h2>
+
+<pre><code>sudo yum install certbot python2-certbot-nginx
+</code></pre>
+
+<h2 id="其他版本">其他版本</h2>
+
+<p>前往<a href="https://certbot.eff.org/lets-encrypt/centos6-nginx">certbot官网</a></p>
+
+<h1 id="生成证书">生成证书</h1>
+
+<pre><code>sudo certbot --nginx
+</code></pre>
+
+            <ul class="share-buttons">
     
-<h1><a href="https://yooxinz.github.io/post/githubblogdomainbinding/" title="github博客域名绑定">github博客域名绑定</a></h1>
+</ul>
 
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.07.25">2017.07.25</time>
-
-    &middot; Tagged in
+        </article>
         
-        <a href="https://yooxinz.github.io/tags/github">github</a>
-        
+        <div class="comments">
+            
+            
+            
+            
+            
+            <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDM5NS8xMDkzMg==">
+                <script type="text/javascript">
+                    (function(d, s) {
+                        var j, e = d.getElementsByTagName(s)[0];
     
-
-</span>
-</footer>
-
-    <p>通过github创建的blog绑定域名时出现不加载&hellip;</p>
-    <a href="https://yooxinz.github.io/post/githubblogdomainbinding/" title="github博客域名绑定">Read more &raquo;</a>
-</article>
-
-        
-            <article class="post">
+                        if (typeof LivereTower === 'function') { return; }
     
-<h1><a href="https://yooxinz.github.io/post/gitignore/" title="Git忽略规则及.gitignore规则不生效的解决办法">Git忽略规则及.gitignore规则不生效的解决办法</a></h1>
-
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.05.01">2017.05.01</time>
-
-    &middot; Tagged in
-        
-        <a href="https://yooxinz.github.io/tags/git">git</a>
-        
+                        j = d.createElement(s);
+                        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                        j.async = true;
     
-
-</span>
-</footer>
-
-    <p>先创建的项目后添加.gitignore文件时遇到不&hellip;</p>
-    <a href="https://yooxinz.github.io/post/gitignore/" title="Git忽略规则及.gitignore规则不生效的解决办法">Read more &raquo;</a>
-</article>
-
+                        e.parentNode.insertBefore(j, e);
+                    })(document, 'script');
+                </script>
+                <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                
+        </div>
         
-            <article class="post">
-    
-<h1><a href="https://yooxinz.github.io/post/sonarinstaller/" title="SonarQube文档">SonarQube文档</a></h1>
-
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.04.29">2017.04.29</time>
-
-    &middot; Tagged in
-        
-        <a href="https://yooxinz.github.io/tags/sonarqube">sonarqube</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>最近搭建SonarQube的一些安装心得，记录下来&hellip;</p>
-    <a href="https://yooxinz.github.io/post/sonarinstaller/" title="SonarQube文档">Read more &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://yooxinz.github.io/post/javasendhttp/" title="Java模拟发送http请求">Java模拟发送http请求</a></h1>
-
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.04.15">2017.04.15</time>
-
-    &middot; Tagged in
-        
-        <a href="https://yooxinz.github.io/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>基于Java模拟http请求发送，其中包含实际代码&hellip;</p>
-    <a href="https://yooxinz.github.io/post/javasendhttp/" title="Java模拟发送http请求">Read more &raquo;</a>
-</article>
-
-        
-        <div class="pagination">
-<nav>
-
-    
-	<a class="btn newer" href="/" title="Newer">&laquo; Newer</a>
-	
-
-	<p class="counter">Page 2 of 2</p>
-
-
-	
-
-</nav>
-</div>
-
     </main>
     <aside class="author">
 	<script>
@@ -208,6 +174,8 @@
   <a class="tag" href="/tags/hugo"><i class=""></i>hugo</a>
   
   <a class="tag" href="/tags/java"><i class=""></i>java</a>
+  
+  <a class="tag" href="/tags/nginx"><i class=""></i>nginx</a>
   
   <a class="tag" href="/tags/sonarqube"><i class=""></i>sonarqube</a>
   
