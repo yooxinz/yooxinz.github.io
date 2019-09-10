@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>张永兴的博客</title>
+        <title>张永兴的博客 &middot; 张永兴的博客</title>
         <meta name="author">
         <meta name="description" content="张永兴的个人博客">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,12 +35,92 @@
           </div>
         </header>
 
-
 <div class="container clearfix">
     <main role="main" class="content">
-        <article class="post">
-            <a class="btn home" href="https://yooxinz.github.io" title="Back to home">&laquo; Back to home</a>
-            
+        
+        
+            <article class="post">
+    
+<h1><a href="https://yooxinz.github.io/post/aslist/" title="Arrays.asList()学习">Arrays.asList()学习</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.08.22">2017.08.22</time>
+
+    &middot; Tagged in
+        
+        <a href="https://yooxinz.github.io/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>Arrays.asList() 是泛型方法, 传入的对象必须是对象数组 int[] myArray = { 1, 2,&hellip;</p>
+    <a href="https://yooxinz.github.io/post/aslist/" title="Arrays.asList()学习">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://yooxinz.github.io/post/javagetresource/" title="Java中获取资源文件">Java中获取资源文件</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
+
+    &middot; Tagged in
+        
+        <a href="https://yooxinz.github.io/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>Java中可以通过getClass().getRe&hellip;</p>
+    <a href="https://yooxinz.github.io/post/javagetresource/" title="Java中获取资源文件">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://yooxinz.github.io/post/githubblogdomainbinding/" title="github博客域名绑定">github博客域名绑定</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.07.25">2017.07.25</time>
+
+    &middot; Tagged in
+        
+        <a href="https://yooxinz.github.io/tags/github">github</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>通过github创建的blog绑定域名时出现不加载&hellip;</p>
+    <a href="https://yooxinz.github.io/post/githubblogdomainbinding/" title="github博客域名绑定">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://yooxinz.github.io/post/gitignore/" title="Git忽略规则及.gitignore规则不生效的解决办法">Git忽略规则及.gitignore规则不生效的解决办法</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.05.01">2017.05.01</time>
+
+    &middot; Tagged in
+        
+        <a href="https://yooxinz.github.io/tags/git">git</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>先创建的项目后添加.gitignore文件时遇到不&hellip;</p>
+    <a href="https://yooxinz.github.io/post/gitignore/" title="Git忽略规则及.gitignore规则不生效的解决办法">Read more &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://yooxinz.github.io/post/sonarinstaller/" title="SonarQube文档">SonarQube文档</a></h1>
 
 <footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.04.29">2017.04.29</time>
@@ -54,105 +134,28 @@
 </span>
 </footer>
 
-            
+    <p>最近搭建SonarQube的一些安装心得，记录下来&hellip;</p>
+    <a href="https://yooxinz.github.io/post/sonarinstaller/" title="SonarQube文档">Read more &raquo;</a>
+</article>
 
-<p>最近搭建SonarQube的一些安装心得，记录下来。</p>
-
-<hr />
-
-<ul>
-<li>mysql初始化数据库</li>
-</ul>
-
-<pre><code>CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci; 
-CREATE USER 'sonar' IDENTIFIED BY 'sonar';
-GRANT ALL ON sonar.* TO 'sonar'@'%' IDENTIFIED BY 'sonar';
-GRANT ALL ON sonar.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar';
-FLUSH PRIVILEGES;
-</code></pre>
-
-<ul>
-<li>SonarQube</li>
-</ul>
-
-<p><a href="https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.3.1.zip">下载地址</a></p>
-
-<p>配置SonarQube服务器sonar.properties</p>
-
-<pre><code>sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance
-sonar.jdbc.username=sonar
-sonar.jdbc.password=sonar
-sonar.sorceEncoding=UTF-8
-sonar.login=admin
-sonar.password=admin
-</code></pre>
-
-<ul>
-<li>SonarScanner</li>
-</ul>
-
-<p><a href="https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.1.733.zip">下载地址</a></p>
-
-<p>SonarScanner配置文件sonar-scanner.properties</p>
-
-<pre><code>sonar.host.url=http://localhost:9000
-sonar.projectKey=hmall-test
-sonar.projectName=hmall-test
-sonar.sources=src
-sonar.language=java
-sonar.login=admin
-sonar.password=admin
-</code></pre>
-
-<h2 id="2-sonarlint安装">2.sonarLint安装</h2>
-
-<hr />
-
-<ul>
-<li>安装sonarLint插件</li>
-</ul>
-
-<p>idea&ndash;plugns中查找sonarLint插件，并安装；安装完成后，重启idea；</p>
-
-<ul>
-<li>sonarLint配置</li>
-</ul>
-
-<p>idea&ndash;设置&ndash;other setting&ndash;SonarLint General Setting&ndash;添加sonarQube servers&ndash;填写server URL</p>
-
-<p>idea&ndash;设置&ndash;other setting&ndash;SonarLint Project Setting&ndash;勾选Enable binding to remote sonarQube server&ndash;选择上一步创建的server&ndash;选择对应的项目</p>
-
-            <ul class="share-buttons">
-    
-</ul>
-
-        </article>
         
-        <div class="comments">
-            
-            
-            
-            
-            
-            <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDM5NS8xMDkzMg==">
-                <script type="text/javascript">
-                    (function(d, s) {
-                        var j, e = d.getElementsByTagName(s)[0];
+        <div class="pagination">
+<nav>
+
     
-                        if (typeof LivereTower === 'function') { return; }
-    
-                        j = d.createElement(s);
-                        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                        j.async = true;
-    
-                        e.parentNode.insertBefore(j, e);
-                    })(document, 'script');
-                </script>
-                <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-                </div>
-                
-        </div>
-        
+	<a class="btn newer" href="/" title="Newer">&laquo; Newer</a>
+	
+
+	<p class="counter">Page 2 of 3</p>
+
+
+	
+	<a class="btn older" href="/page/3/" title="Older">Older &raquo;</a>
+	
+
+</nav>
+</div>
+
     </main>
     <aside class="author">
 	<script>

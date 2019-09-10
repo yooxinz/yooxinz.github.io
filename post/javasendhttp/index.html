@@ -7,7 +7,7 @@
         <meta name="author">
         <meta name="description" content="张永兴的个人博客">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.58.0" />
+        <meta name="generator" content="Hugo 0.52" />
         <link href='https://yooxinz.github.io/post/index.xml' rel="alternate" type="application/rss+xml" title="张永兴的博客" />
         <link href='https://yooxinz.github.io/post/index.xml' rel="feed" type="application/rss+xml" title="张永兴的博客" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -65,7 +65,8 @@
 
 <li><p><a href="#impl">实现类</a></p>
 
-<h3 id="span-id-util-工具类-span"><span id="util">工具类</span></h3>
+<h3 id="span-id-util-工具类-span"><span id="util">工具类</span></h3></li>
+</ul>
 
 <pre><code>import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -102,283 +103,282 @@ import org.slf4j.LoggerFactory;
 
 public class HttpUtils {
 
-/**
- * get
- *
- * @param host
- * @param path
- * @param method
- * @param headers
- * @param querys
- * @return
- * @throws Exception
- */
-public static HttpResponse doGet(String host, String path, String method,
-        Map&lt;String, String&gt; headers,  Map&lt;String, String&gt; querys) throws Exception {      
+    /**
+     * get
+     *
+     * @param host
+     * @param path
+     * @param method
+     * @param headers
+     * @param querys
+     * @return
+     * @throws Exception
+     */
+    public static HttpResponse doGet(String host, String path, String method,
+            Map&lt;String, String&gt; headers,  Map&lt;String, String&gt; querys) throws Exception {      
 
-    HttpClient httpClient = wrapClient(host);
-    HttpGet request = new HttpGet(buildUrl(host, path, querys));
-    for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
-        request.addHeader(e.getKey(), e.getValue());
-    }
-    return httpClient.execute(request);
-}
-
-/**
- * post form
- *
- * @param host
- * @param path
- * @param method
- * @param headers
- * @param querys
- * @param bodys
- * @return
- * @throws Exception
- */
-public static HttpResponse doPost(String host, String path, String method,
-        Map&lt;String, String&gt; headers,
-        Map&lt;String, String&gt; querys,
-        Map&lt;String, String&gt; bodys)
-        throws Exception {      
-    HttpClient httpClient = wrapClient(host);
-
-    HttpPost request = new HttpPost(buildUrl(host, path, querys));
-    for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
-        request.addHeader(e.getKey(), e.getValue());
-    }
-
-    if (bodys != null) {
-        List&lt;NameValuePair&gt; nameValuePairList = new ArrayList&lt;NameValuePair&gt;();
-
-        for (String key : bodys.keySet()) {
-            nameValuePairList.add(new BasicNameValuePair(key, bodys.get(key)));
+        HttpClient httpClient = wrapClient(host);
+        HttpGet request = new HttpGet(buildUrl(host, path, querys));
+        for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
+            request.addHeader(e.getKey(), e.getValue());
         }
-        UrlEncodedFormEntity formEntity = new UrlEncodedFormEntity(nameValuePairList, &quot;utf-8&quot;);
-        formEntity.setContentType(&quot;application/x-www-form-urlencoded; charset=UTF-8&quot;);
-        request.setEntity(formEntity);
+        return httpClient.execute(request);
     }
 
-    return httpClient.execute(request);
-}   
+    /**
+     * post form
+     *
+     * @param host
+     * @param path
+     * @param method
+     * @param headers
+     * @param querys
+     * @param bodys
+     * @return
+     * @throws Exception
+     */
+    public static HttpResponse doPost(String host, String path, String method,
+            Map&lt;String, String&gt; headers,
+            Map&lt;String, String&gt; querys,
+            Map&lt;String, String&gt; bodys)
+            throws Exception {      
+        HttpClient httpClient = wrapClient(host);
 
-/**
- * Post String
- *
- * @param host
- * @param path
- * @param method
- * @param headers
- * @param querys
- * @param body
- * @return
- * @throws Exception
- */
-public static HttpResponse doPost(String host, String path, String method,
-        Map&lt;String, String&gt; headers,
-        Map&lt;String, String&gt; querys,
-        String body)
-        throws Exception {      
-    HttpClient httpClient = wrapClient(host);
+        HttpPost request = new HttpPost(buildUrl(host, path, querys));
+        for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
+            request.addHeader(e.getKey(), e.getValue());
+        }
 
-    HttpPost request = new HttpPost(buildUrl(host, path, querys));
-    for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
-        request.addHeader(e.getKey(), e.getValue());
+        if (bodys != null) {
+            List&lt;NameValuePair&gt; nameValuePairList = new ArrayList&lt;NameValuePair&gt;();
+
+            for (String key : bodys.keySet()) {
+                nameValuePairList.add(new BasicNameValuePair(key, bodys.get(key)));
+            }
+            UrlEncodedFormEntity formEntity = new UrlEncodedFormEntity(nameValuePairList, &quot;utf-8&quot;);
+            formEntity.setContentType(&quot;application/x-www-form-urlencoded; charset=UTF-8&quot;);
+            request.setEntity(formEntity);
+        }
+
+        return httpClient.execute(request);
+    }   
+
+    /**
+     * Post String
+     *
+     * @param host
+     * @param path
+     * @param method
+     * @param headers
+     * @param querys
+     * @param body
+     * @return
+     * @throws Exception
+     */
+    public static HttpResponse doPost(String host, String path, String method,
+            Map&lt;String, String&gt; headers,
+            Map&lt;String, String&gt; querys,
+            String body)
+            throws Exception {      
+        HttpClient httpClient = wrapClient(host);
+
+        HttpPost request = new HttpPost(buildUrl(host, path, querys));
+        for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
+            request.addHeader(e.getKey(), e.getValue());
+        }
+
+        if (StringUtils.isNotBlank(body)) {
+            request.setEntity(new StringEntity(body, &quot;utf-8&quot;));
+        }
+
+        return httpClient.execute(request);
     }
 
-    if (StringUtils.isNotBlank(body)) {
-        request.setEntity(new StringEntity(body, &quot;utf-8&quot;));
+    /**
+     * Post stream
+     *
+     * @param host
+     * @param path
+     * @param method
+     * @param headers
+     * @param querys
+     * @param body
+     * @return
+     * @throws Exception
+     */
+    public static HttpResponse doPost(String host, String path, String method,
+            Map&lt;String, String&gt; headers,
+            Map&lt;String, String&gt; querys,
+            byte[] body)
+            throws Exception {      
+        HttpClient httpClient = wrapClient(host);
+
+        HttpPost request = new HttpPost(buildUrl(host, path, querys));
+        for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
+            request.addHeader(e.getKey(), e.getValue());
+        }
+
+        if (body != null) {
+            request.setEntity(new ByteArrayEntity(body));
+        }
+
+        return httpClient.execute(request);
     }
 
-    return httpClient.execute(request);
-}
+    /**
+     * Put String
+     * @param host
+     * @param path
+     * @param method
+     * @param headers
+     * @param querys
+     * @param body
+     * @return
+     * @throws Exception
+     */
+    public static HttpResponse doPut(String host, String path, String method,
+            Map&lt;String, String&gt; headers,
+            Map&lt;String, String&gt; querys,
+            String body)
+            throws Exception {      
+        HttpClient httpClient = wrapClient(host);
 
-/**
- * Post stream
- *
- * @param host
- * @param path
- * @param method
- * @param headers
- * @param querys
- * @param body
- * @return
- * @throws Exception
- */
-public static HttpResponse doPost(String host, String path, String method,
-        Map&lt;String, String&gt; headers,
-        Map&lt;String, String&gt; querys,
-        byte[] body)
-        throws Exception {      
-    HttpClient httpClient = wrapClient(host);
+        HttpPut request = new HttpPut(buildUrl(host, path, querys));
+        for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
+            request.addHeader(e.getKey(), e.getValue());
+        }
 
-    HttpPost request = new HttpPost(buildUrl(host, path, querys));
-    for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
-        request.addHeader(e.getKey(), e.getValue());
+        if (StringUtils.isNotBlank(body)) {
+            request.setEntity(new StringEntity(body, &quot;utf-8&quot;));
+        }
+
+        return httpClient.execute(request);
     }
 
-    if (body != null) {
-        request.setEntity(new ByteArrayEntity(body));
+    /**
+     * Put stream
+     * @param host
+     * @param path
+     * @param method
+     * @param headers
+     * @param querys
+     * @param body
+     * @return
+     * @throws Exception
+     */
+    public static HttpResponse doPut(String host, String path, String method,
+            Map&lt;String, String&gt; headers,
+            Map&lt;String, String&gt; querys,
+            byte[] body)
+            throws Exception {      
+        HttpClient httpClient = wrapClient(host);
+
+        HttpPut request = new HttpPut(buildUrl(host, path, querys));
+        for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
+            request.addHeader(e.getKey(), e.getValue());
+        }
+
+        if (body != null) {
+            request.setEntity(new ByteArrayEntity(body));
+        }
+
+        return httpClient.execute(request);
     }
 
-    return httpClient.execute(request);
-}
+    /**
+     * Delete
+     *  
+     * @param host
+     * @param path
+     * @param method
+     * @param headers
+     * @param querys
+     * @return
+     * @throws Exception
+     */
+    public static HttpResponse doDelete(String host, String path, String method,
+            Map&lt;String, String&gt; headers,
+            Map&lt;String, String&gt; querys)
+            throws Exception {      
+        HttpClient httpClient = wrapClient(host);
 
-/**
- * Put String
- * @param host
- * @param path
- * @param method
- * @param headers
- * @param querys
- * @param body
- * @return
- * @throws Exception
- */
-public static HttpResponse doPut(String host, String path, String method,
-        Map&lt;String, String&gt; headers,
-        Map&lt;String, String&gt; querys,
-        String body)
-        throws Exception {      
-    HttpClient httpClient = wrapClient(host);
+        HttpDelete request = new HttpDelete(buildUrl(host, path, querys));
+        for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
+            request.addHeader(e.getKey(), e.getValue());
+        }
 
-    HttpPut request = new HttpPut(buildUrl(host, path, querys));
-    for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
-        request.addHeader(e.getKey(), e.getValue());
+        return httpClient.execute(request);
     }
 
-    if (StringUtils.isNotBlank(body)) {
-        request.setEntity(new StringEntity(body, &quot;utf-8&quot;));
-    }
-
-    return httpClient.execute(request);
-}
-
-/**
- * Put stream
- * @param host
- * @param path
- * @param method
- * @param headers
- * @param querys
- * @param body
- * @return
- * @throws Exception
- */
-public static HttpResponse doPut(String host, String path, String method,
-        Map&lt;String, String&gt; headers,
-        Map&lt;String, String&gt; querys,
-        byte[] body)
-        throws Exception {      
-    HttpClient httpClient = wrapClient(host);
-
-    HttpPut request = new HttpPut(buildUrl(host, path, querys));
-    for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
-        request.addHeader(e.getKey(), e.getValue());
-    }
-
-    if (body != null) {
-        request.setEntity(new ByteArrayEntity(body));
-    }
-
-    return httpClient.execute(request);
-}
-
-/**
- * Delete
- *  
- * @param host
- * @param path
- * @param method
- * @param headers
- * @param querys
- * @return
- * @throws Exception
- */
-public static HttpResponse doDelete(String host, String path, String method,
-        Map&lt;String, String&gt; headers,
-        Map&lt;String, String&gt; querys)
-        throws Exception {      
-    HttpClient httpClient = wrapClient(host);
-
-    HttpDelete request = new HttpDelete(buildUrl(host, path, querys));
-    for (Map.Entry&lt;String, String&gt; e : headers.entrySet()) {
-        request.addHeader(e.getKey(), e.getValue());
-    }
-
-    return httpClient.execute(request);
-}
-
-private static String buildUrl(String host, String path, Map&lt;String, String&gt; querys) throws UnsupportedEncodingException {
-    StringBuilder sbUrl = new StringBuilder();
-    sbUrl.append(host);
-    if (!StringUtils.isBlank(path)) {
-        sbUrl.append(path);
-    }
-    if (null != querys) {
-        StringBuilder sbQuery = new StringBuilder();
-        for (Map.Entry&lt;String, String&gt; query : querys.entrySet()) {
+    private static String buildUrl(String host, String path, Map&lt;String, String&gt; querys) throws UnsupportedEncodingException {
+        StringBuilder sbUrl = new StringBuilder();
+        sbUrl.append(host);
+        if (!StringUtils.isBlank(path)) {
+            sbUrl.append(path);
+        }
+        if (null != querys) {
+            StringBuilder sbQuery = new StringBuilder();
+            for (Map.Entry&lt;String, String&gt; query : querys.entrySet()) {
+                if (0 &lt; sbQuery.length()) {
+                    sbQuery.append(&quot;&amp;&quot;);
+                }
+                if (StringUtils.isBlank(query.getKey()) &amp;&amp; !StringUtils.isBlank(query.getValue())) {
+                    sbQuery.append(query.getValue());
+                }
+                if (!StringUtils.isBlank(query.getKey())) {
+                    sbQuery.append(query.getKey());
+                    if (!StringUtils.isBlank(query.getValue())) {
+                        sbQuery.append(&quot;=&quot;);
+                        sbQuery.append(URLEncoder.encode(query.getValue(), &quot;utf-8&quot;));
+                    }                   
+                }
+            }
             if (0 &lt; sbQuery.length()) {
-                sbQuery.append(&quot;&amp;&quot;);
-            }
-            if (StringUtils.isBlank(query.getKey()) &amp;&amp; !StringUtils.isBlank(query.getValue())) {
-                sbQuery.append(query.getValue());
-            }
-            if (!StringUtils.isBlank(query.getKey())) {
-                sbQuery.append(query.getKey());
-                if (!StringUtils.isBlank(query.getValue())) {
-                    sbQuery.append(&quot;=&quot;);
-                    sbQuery.append(URLEncoder.encode(query.getValue(), &quot;utf-8&quot;));
-                }                   
+                sbUrl.append(&quot;?&quot;).append(sbQuery);
             }
         }
-        if (0 &lt; sbQuery.length()) {
-            sbUrl.append(&quot;?&quot;).append(sbQuery);
+
+        return sbUrl.toString();
+    }
+
+    private static HttpClient wrapClient(String host) {
+        HttpClient httpClient = new DefaultHttpClient();
+        if (host.startsWith(&quot;https://&quot;)) {
+            sslClient(httpClient);
+        }
+
+        return httpClient;
+    }
+
+    private static void sslClient(HttpClient httpClient) {
+        try {
+            SSLContext ctx = SSLContext.getInstance(&quot;TLS&quot;);
+            X509TrustManager tm = new X509TrustManager() {
+                public X509Certificate[] getAcceptedIssuers() {
+                    return null;
+                }
+                public void checkClientTrusted(X509Certificate[] xcs, String str) {
+
+                }
+                public void checkServerTrusted(X509Certificate[] xcs, String str) {
+
+                }
+            };
+            ctx.init(null, new TrustManager[] { tm }, null);
+            SSLSocketFactory ssf = new SSLSocketFactory(ctx);
+            ssf.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+            ClientConnectionManager ccm = httpClient.getConnectionManager();
+            SchemeRegistry registry = ccm.getSchemeRegistry();
+            registry.register(new Scheme(&quot;https&quot;, 443, ssf));
+        } catch (KeyManagementException ex) {
+            throw new RuntimeException(ex);
+        } catch (NoSuchAlgorithmException ex) {
+            throw new RuntimeException(ex);
         }
     }
-
-    return sbUrl.toString();
 }
 
-private static HttpClient wrapClient(String host) {
-    HttpClient httpClient = new DefaultHttpClient();
-    if (host.startsWith(&quot;https://&quot;)) {
-        sslClient(httpClient);
-    }
-
-    return httpClient;
-}
-
-private static void sslClient(HttpClient httpClient) {
-    try {
-        SSLContext ctx = SSLContext.getInstance(&quot;TLS&quot;);
-        X509TrustManager tm = new X509TrustManager() {
-            public X509Certificate[] getAcceptedIssuers() {
-                return null;
-            }
-            public void checkClientTrusted(X509Certificate[] xcs, String str) {
-
-            }
-            public void checkServerTrusted(X509Certificate[] xcs, String str) {
-
-            }
-        };
-        ctx.init(null, new TrustManager[] { tm }, null);
-        SSLSocketFactory ssf = new SSLSocketFactory(ctx);
-        ssf.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
-        ClientConnectionManager ccm = httpClient.getConnectionManager();
-        SchemeRegistry registry = ccm.getSchemeRegistry();
-        registry.register(new Scheme(&quot;https&quot;, 443, ssf));
-    } catch (KeyManagementException ex) {
-        throw new RuntimeException(ex);
-    } catch (NoSuchAlgorithmException ex) {
-        throw new RuntimeException(ex);
-    }
-}
-}
-
-</code></pre></li>
-</ul>
+</code></pre>
 
 <h3 id="span-id-impl-实现类-span"><span id="impl">实现类</span></h3>
 
