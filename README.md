@@ -5,7 +5,7 @@
 ```
 hugo server -w
 ```
-访问地址 `http://localhost:1313/`
+访问地址 `http://localhost:1313/blog/`
 
 生成站点
 
