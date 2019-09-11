@@ -15,8 +15,8 @@ hugo
 ```
 
 发布博文:
-src分支上修改提交到github
-travis 自动触发 src代码生成静态展点上传master分支并部署到blog.yooxinz.com
+master分支上修改提交到github
+travis 自动触发 master代码生成静态展点上传public分支并部署到blog.yooxinz.com
 
 待优化：
 1. 论坛
