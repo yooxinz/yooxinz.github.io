@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Springboot on 张永兴的博客</title>
-    <link>https://yooxinz.github.io/tags/springboot/</link>
+    <link>https://yooxinz.github.io/blog/tags/springboot/</link>
     <description>Recent content in Springboot on 张永兴的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Sep 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://yooxinz.github.io/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://yooxinz.github.io/blog/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Spring Boot 添加日志 TraceId</title>
-      <link>https://yooxinz.github.io/post/traceid/</link>
+      <link>https://yooxinz.github.io/blog/post/traceid/</link>
       <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://yooxinz.github.io/post/traceid/</guid>
+      <guid>https://yooxinz.github.io/blog/post/traceid/</guid>
       <description>配置Spring Boot 日志的 TraceId,提高问题排</description>
     </item>
     

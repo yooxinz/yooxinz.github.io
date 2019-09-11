@@ -2,120 +2,120 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 张永兴的博客</title>
-    <link>https://yooxinz.github.io/post/</link>
+    <link>https://yooxinz.github.io/blog/post/</link>
     <description>Recent content in Posts on 张永兴的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Sep 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://yooxinz.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://yooxinz.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Spring Boot 添加日志 TraceId</title>
-      <link>https://yooxinz.github.io/post/traceid/</link>
+      <link>https://yooxinz.github.io/blog/post/traceid/</link>
       <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://yooxinz.github.io/post/traceid/</guid>
+      <guid>https://yooxinz.github.io/blog/post/traceid/</guid>
       <description>配置Spring Boot 日志的 TraceId,提高问题排</description>
     </item>
     
     <item>
       <title>nginx https认证</title>
-      <link>https://yooxinz.github.io/post/nginxhttpsconfig/</link>
+      <link>https://yooxinz.github.io/blog/post/nginxhttpsconfig/</link>
       <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://yooxinz.github.io/post/nginxhttpsconfig/</guid>
+      <guid>https://yooxinz.github.io/blog/post/nginxhttpsconfig/</guid>
       <description>通过CertBot为nginx配置https。 先配</description>
     </item>
     
     <item>
       <title>通过Travis-CI发布博客</title>
-      <link>https://yooxinz.github.io/post/travis/</link>
+      <link>https://yooxinz.github.io/blog/post/travis/</link>
       <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://yooxinz.github.io/post/travis/</guid>
+      <guid>https://yooxinz.github.io/blog/post/travis/</guid>
       <description>通过Travis CI使增加新博客后自动生成对应的站</description>
     </item>
     
     <item>
       <title>可视化学习Git</title>
-      <link>https://yooxinz.github.io/post/gitstudy/</link>
+      <link>https://yooxinz.github.io/blog/post/gitstudy/</link>
       <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://yooxinz.github.io/post/gitstudy/</guid>
+      <guid>https://yooxinz.github.io/blog/post/gitstudy/</guid>
       <description>给大家推荐一个Git学习工具LearnGitBra</description>
     </item>
     
     <item>
       <title>实现Hugo中的搜索功能</title>
-      <link>https://yooxinz.github.io/post/hugosearch/</link>
+      <link>https://yooxinz.github.io/blog/post/hugosearch/</link>
       <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://yooxinz.github.io/post/hugosearch/</guid>
+      <guid>https://yooxinz.github.io/blog/post/hugosearch/</guid>
       <description>基于Grunt实现Hugo中的搜索功能，先生成索引</description>
     </item>
     
     <item>
       <title>Java反射获取实体属性</title>
-      <link>https://yooxinz.github.io/post/javagetattributebyreflect/</link>
+      <link>https://yooxinz.github.io/blog/post/javagetattributebyreflect/</link>
       <pubDate>Tue, 19 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yooxinz.github.io/post/javagetattributebyreflect/</guid>
+      <guid>https://yooxinz.github.io/blog/post/javagetattributebyreflect/</guid>
       <description>Java中可以通过反射获取未知实体的属性 Field field=message.getClass().getDeclaredField(&amp;quot;value&amp;quot;); field.setAccessible(true); field.get(message);</description>
     </item>
     
     <item>
       <title>Arrays.asList()学习</title>
-      <link>https://yooxinz.github.io/post/aslist/</link>
+      <link>https://yooxinz.github.io/blog/post/aslist/</link>
       <pubDate>Tue, 22 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yooxinz.github.io/post/aslist/</guid>
+      <guid>https://yooxinz.github.io/blog/post/aslist/</guid>
       <description>Arrays.asList() 是泛型方法, 传入的对象必须是对象数组 int[] myArray = { 1, 2,</description>
     </item>
     
     <item>
       <title>Java中获取资源文件</title>
-      <link>https://yooxinz.github.io/post/javagetresource/</link>
+      <link>https://yooxinz.github.io/blog/post/javagetresource/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yooxinz.github.io/post/javagetresource/</guid>
+      <guid>https://yooxinz.github.io/blog/post/javagetresource/</guid>
       <description>Java中可以通过getClass().getRe</description>
     </item>
     
     <item>
       <title>github博客域名绑定</title>
-      <link>https://yooxinz.github.io/post/githubblogdomainbinding/</link>
+      <link>https://yooxinz.github.io/blog/post/githubblogdomainbinding/</link>
       <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yooxinz.github.io/post/githubblogdomainbinding/</guid>
+      <guid>https://yooxinz.github.io/blog/post/githubblogdomainbinding/</guid>
       <description>通过github创建的blog绑定域名时出现不加载</description>
     </item>
     
     <item>
       <title>Git忽略规则及.gitignore规则不生效的解决办法</title>
-      <link>https://yooxinz.github.io/post/gitignore/</link>
+      <link>https://yooxinz.github.io/blog/post/gitignore/</link>
       <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yooxinz.github.io/post/gitignore/</guid>
+      <guid>https://yooxinz.github.io/blog/post/gitignore/</guid>
       <description>先创建的项目后添加.gitignore文件时遇到不</description>
     </item>
     
     <item>
       <title>SonarQube文档</title>
-      <link>https://yooxinz.github.io/post/sonarinstaller/</link>
+      <link>https://yooxinz.github.io/blog/post/sonarinstaller/</link>
       <pubDate>Sat, 29 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yooxinz.github.io/post/sonarinstaller/</guid>
+      <guid>https://yooxinz.github.io/blog/post/sonarinstaller/</guid>
       <description>最近搭建SonarQube的一些安装心得，记录下来</description>
     </item>
     
     <item>
       <title>Java模拟发送http请求</title>
-      <link>https://yooxinz.github.io/post/javasendhttp/</link>
+      <link>https://yooxinz.github.io/blog/post/javasendhttp/</link>
       <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://yooxinz.github.io/post/javasendhttp/</guid>
+      <guid>https://yooxinz.github.io/blog/post/javasendhttp/</guid>
       <description>基于Java模拟http请求发送，其中包含实际代码</description>
     </item>
     

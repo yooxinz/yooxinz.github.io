@@ -3,126 +3,126 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://yooxinz.github.io/post/traceid/</loc>
+    <loc>https://yooxinz.github.io/blog/post/traceid/</loc>
     <lastmod>2019-09-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/post/nginxhttpsconfig/</loc>
+    <loc>https://yooxinz.github.io/blog/post/nginxhttpsconfig/</loc>
     <lastmod>2019-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/post/travis/</loc>
+    <loc>https://yooxinz.github.io/blog/post/travis/</loc>
     <lastmod>2018-12-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/post/gitstudy/</loc>
+    <loc>https://yooxinz.github.io/blog/post/gitstudy/</loc>
     <lastmod>2018-12-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/post/hugosearch/</loc>
+    <loc>https://yooxinz.github.io/blog/post/hugosearch/</loc>
     <lastmod>2018-12-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/post/javagetattributebyreflect/</loc>
+    <loc>https://yooxinz.github.io/blog/post/javagetattributebyreflect/</loc>
     <lastmod>2017-09-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/post/aslist/</loc>
+    <loc>https://yooxinz.github.io/blog/post/aslist/</loc>
     <lastmod>2017-08-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/post/javagetresource/</loc>
+    <loc>https://yooxinz.github.io/blog/post/javagetresource/</loc>
     <lastmod>2017-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/post/githubblogdomainbinding/</loc>
+    <loc>https://yooxinz.github.io/blog/post/githubblogdomainbinding/</loc>
     <lastmod>2017-07-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/post/gitignore/</loc>
+    <loc>https://yooxinz.github.io/blog/post/gitignore/</loc>
     <lastmod>2017-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/post/sonarinstaller/</loc>
+    <loc>https://yooxinz.github.io/blog/post/sonarinstaller/</loc>
     <lastmod>2017-04-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/post/javasendhttp/</loc>
+    <loc>https://yooxinz.github.io/blog/post/javasendhttp/</loc>
     <lastmod>2017-04-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/categories/</loc>
+    <loc>https://yooxinz.github.io/blog/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/tags/git/</loc>
+    <loc>https://yooxinz.github.io/blog/tags/git/</loc>
     <lastmod>2018-12-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/tags/github/</loc>
+    <loc>https://yooxinz.github.io/blog/tags/github/</loc>
     <lastmod>2018-12-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/tags/hugo/</loc>
+    <loc>https://yooxinz.github.io/blog/tags/hugo/</loc>
     <lastmod>2018-12-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/tags/java/</loc>
+    <loc>https://yooxinz.github.io/blog/tags/java/</loc>
     <lastmod>2017-09-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/tags/nginx/</loc>
+    <loc>https://yooxinz.github.io/blog/tags/nginx/</loc>
     <lastmod>2019-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/post/</loc>
+    <loc>https://yooxinz.github.io/blog/post/</loc>
     <lastmod>2019-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/tags/sonarqube/</loc>
+    <loc>https://yooxinz.github.io/blog/tags/sonarqube/</loc>
     <lastmod>2017-04-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/tags/springboot/</loc>
+    <loc>https://yooxinz.github.io/blog/tags/springboot/</loc>
     <lastmod>2019-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/tags/</loc>
+    <loc>https://yooxinz.github.io/blog/tags/</loc>
     <lastmod>2018-12-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://yooxinz.github.io/</loc>
+    <loc>https://yooxinz.github.io/blog/</loc>
     <lastmod>2019-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
