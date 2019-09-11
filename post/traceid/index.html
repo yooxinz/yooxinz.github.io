@@ -1,0 +1,302 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>张永兴的博客</title>
+        <meta name="author">
+        <meta name="description" content="张永兴的个人博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.52" />
+        <link href='https://yooxinz.github.io/post/index.xml' rel="alternate" type="application/rss+xml" title="张永兴的博客" />
+        <link href='https://yooxinz.github.io/post/index.xml' rel="feed" type="application/rss+xml" title="张永兴的博客" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href='https://yooxinz.github.io/css/styles.css'>
+        <link rel="icon" href='https://yooxinz.github.io/favicon.ico'>
+        <link rel="apple-touch-icon" href='https://yooxinz.github.io/apple-touch-icon.png' />
+        <link rel="stylesheet" href='https://cdn.bootcss.com/highlight.js/8.8.0/styles/androidstudio.min.css'>
+        <script src='https://cdn.bootcss.com/modernizr/2.8.0/modernizr.min.js'></script>
+        
+        
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?fdf7fda5654da5c80c86d1074142d32a";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    </head>
+    <body baseUrl="https://yooxinz.github.io">
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2>张永兴的个人博客</h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://yooxinz.github.io" title="Back to home">&laquo; Back to home</a>
+            
+<h1><a href="https://yooxinz.github.io/post/traceid/" title="Spring Boot 添加日志 TraceId">Spring Boot 添加日志 TraceId</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2019.09.11">2019.09.11</time>
+
+    &middot; Tagged in
+        
+        <a href="https://yooxinz.github.io/tags/springboot">springboot</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>配置Spring Boot 日志的 TraceId,提高问题排查的效率。</p>
+
+<h1 id="通过mdc添加traceid变量">通过MDC添加TraceId变量</h1>
+
+<p>创建拦截器 添加traceId</p>
+
+<pre><code>@Component
+@Slf4j
+public class TraceFilter extends OncePerRequestFilter {
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
+        // &quot;traceId&quot;
+        MDC.put(&quot;traceid&quot;, getTraceId());
+        filterChain.doFilter(httpServletRequest, httpServletResponse);
+    }
+
+    private String getTraceId() {
+        long timestamp = System.currentTimeMillis();
+        UUID uuid = UUID.randomUUID();
+        String uniqueId = timestamp + uuid.toString().replace(&quot;-&quot;, &quot;&quot;);
+        return uniqueId;
+    }
+}
+</code></pre>
+
+<h1 id="配置日志文件">配置日志文件</h1>
+
+<p>application配置日志配置文件:</p>
+
+<pre><code>logging:
+  config: classpath:logback-spring.xml
+</code></pre>
+
+<p>logback-spring.xml文件: 通过 <code>%X{traceid}</code> 获取filter中配置的变量</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;!-- 从高到地低 OFF 、 FATAL 、 ERROR 、 WARN 、 INFO 、 DEBUG 、 TRACE 、 ALL --&gt;
+&lt;!-- 日志输出规则 根据当前ROOT 级别，日志输出时，级别高于root默认的级别时 会输出 --&gt;
+&lt;!-- 以下 每个配置的 filter 是过滤掉输出文件里面，会出现高级别文件，依然出现低级别的日志信息，通过filter 过滤只记录本级别的日志 --&gt;
+
+
+&lt;!-- 属性描述 scan：性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。
+	debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 --&gt;
+&lt;configuration scan=&quot;true&quot; scanPeriod=&quot;60 seconds&quot; debug=&quot;false&quot;&gt;
+    &lt;contextName&gt;d1money-web-ys-ems&lt;/contextName&gt;
+
+    &lt;!-- 日志最大的历史 30天 --&gt;
+    &lt;property name=&quot;maxHistory&quot; value=&quot;30&quot; /&gt;
+    &lt;property name=&quot;maxFileSize&quot; value=&quot;100MB&quot; /&gt;
+
+
+    &lt;!-- ConsoleAppender 控制台输出日志 --&gt;
+    &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
+        &lt;filter class=&quot;ch.qos.logback.classic.filter.ThresholdFilter&quot;&gt;
+            &lt;!-- Minimum logging level to be presented in the console logs --&gt;
+            &lt;level&gt;INFO&lt;/level&gt;
+        &lt;/filter&gt;
+        &lt;!-- 对日志进行格式化 --&gt;
+        &lt;encoder&gt;
+            &lt;pattern&gt;
+                %date{yyyy-MM-dd HH:mm:ss} | %X{traceid} | %highlight(%5p) | %green(%thread) | %boldMagenta(%logger) | %msg%n
+            &lt;/pattern&gt;
+        &lt;/encoder&gt;
+    &lt;/appender&gt;
+
+    &lt;!-- INFO级别日志 --&gt;
+    &lt;!-- 滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件 RollingFileAppender --&gt;
+    &lt;appender name=&quot;FILE&quot;
+              class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+        &lt;filter class=&quot;ch.qos.logback.classic.filter.ThresholdFilter&quot;&gt;
+            &lt;!-- Minimum logging level to be presented in the console logs --&gt;
+            &lt;level&gt;INFO&lt;/level&gt;
+        &lt;/filter&gt;
+        &lt;!-- 最常用的滚动策略，它根据时间来制定滚动策略.既负责滚动也负责出发滚动 --&gt;
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+            &lt;!--日志输出位置 可相对、和绝对路径 --&gt;
+            &lt;fileNamePattern&gt;
+                log/app.%d{yyyy-MM-dd}.%i.log
+            &lt;/fileNamePattern&gt;
+            &lt;!-- 可选节点，控制保留的归档文件的最大数量，超出数量就删除旧文件假设设置每个月滚动，且&lt;maxHistory&gt;是6， 则只保存最近6个月的文件，删除之前的旧文件。注意，删除旧文件是，那些为了归档而创建的目录也会被删除 --&gt;
+            &lt;maxHistory&gt;${maxHistory}&lt;/maxHistory&gt;
+            &lt;timeBasedFileNamingAndTriggeringPolicy class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;&gt;
+                &lt;maxFileSize&gt;${maxFileSize}&lt;/maxFileSize&gt;
+            &lt;/timeBasedFileNamingAndTriggeringPolicy&gt;
+
+        &lt;/rollingPolicy&gt;
+
+
+        &lt;!-- 按照固定窗口模式生成日志文件，当文件大于20MB时，生成新的日志文件。窗口大小是1到3，当保存了3个归档文件后，将覆盖最早的日志。
+            &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.FixedWindowRollingPolicy&quot;&gt;
+            &lt;fileNamePattern&gt;${log_dir}/%d{yyyy-MM-dd}/.log.zip&lt;/fileNamePattern&gt; &lt;minIndex&gt;1&lt;/minIndex&gt;
+            &lt;maxIndex&gt;3&lt;/maxIndex&gt; &lt;/rollingPolicy&gt; --&gt;
+        &lt;!-- 查看当前活动文件的大小，如果超过指定大小会告知RollingFileAppender 触发当前活动文件滚动 &lt;triggeringPolicy
+            class=&quot;ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy&quot;&gt; &lt;maxFileSize&gt;5MB&lt;/maxFileSize&gt;
+            &lt;/triggeringPolicy&gt; --&gt;
+
+        &lt;encoder&gt;
+            &lt;pattern&gt;%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n&lt;/pattern&gt;
+        &lt;/encoder&gt;
+    &lt;/appender&gt;
+
+    &lt;logger name=&quot;java.sql.PreparedStatement&quot; value=&quot;DEBUG&quot; /&gt;
+    &lt;logger name=&quot;java.sql.Connection&quot; value=&quot;DEBUG&quot; /&gt;
+    &lt;logger name=&quot;java.sql.Statement&quot; value=&quot;DEBUG&quot; /&gt;
+    &lt;logger name=&quot;com.ibatis&quot; value=&quot;DEBUG&quot; /&gt;
+    &lt;logger name=&quot;com.ibatis.common.jdbc.SimpleDataSource&quot; value=&quot;DEBUG&quot; /&gt;
+    &lt;logger name=&quot;com.ibatis.common.jdbc.ScriptRunner&quot; level=&quot;DEBUG&quot; /&gt;
+    &lt;logger name=&quot;com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate&quot;
+            value=&quot;DEBUG&quot; /&gt;
+    &lt;logger name=&quot;com.apache.ibatis&quot; level=&quot;TRACE&quot; /&gt;
+
+    &lt;!-- root级别 INFO --&gt;
+    &lt;root level=&quot;info&quot;&gt;
+        &lt;!-- 文件输出 --&gt;
+        &lt;appender-ref ref=&quot;FILE&quot; /&gt;
+        &lt;!-- 控制台输出 --&gt;
+        &lt;appender-ref ref=&quot;STDOUT&quot; /&gt;
+    &lt;/root&gt;
+&lt;/configuration&gt;
+</code></pre>
+
+            <ul class="share-buttons">
+    
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            
+            
+            
+            
+            
+            <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDM5NS8xMDkzMg==">
+                <script type="text/javascript">
+                    (function(d, s) {
+                        var j, e = d.getElementsByTagName(s)[0];
+    
+                        if (typeof LivereTower === 'function') { return; }
+    
+                        j = d.createElement(s);
+                        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                        j.async = true;
+    
+                        e.parentNode.insertBefore(j, e);
+                    })(document, 'script');
+                </script>
+                <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                
+        </div>
+        
+    </main>
+    <aside class="author">
+	<script>
+  (function() {
+    var cx = '003852173732159005764:38fn-nyfxai';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="">
+    <input id="search-input" class="search-input" type="text" placeholder="请搜索博文关键字">
+    <button id="search" class="search-button" type="submit">搜索</button>
+</div>
+  <img class="profile-image" src="https://yooxinz.github.io/img/heard.png" alt="张永兴" />
+  <p class="name">by 
+  <strong>张永兴</strong></p>
+  <p class="address">陕西</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/yooxinz" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://yooxinz.github.io/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+    <div class="tags">
+  
+  <a class="tag" href="/tags/git"><i class=""></i>git</a>
+  
+  <a class="tag" href="/tags/github"><i class=""></i>github</a>
+  
+  <a class="tag" href="/tags/hugo"><i class=""></i>hugo</a>
+  
+  <a class="tag" href="/tags/java"><i class=""></i>java</a>
+  
+  <a class="tag" href="/tags/nginx"><i class=""></i>nginx</a>
+  
+  <a class="tag" href="/tags/sonarqube"><i class=""></i>sonarqube</a>
+  
+  <a class="tag" href="/tags/springboot"><i class=""></i>springboot</a>
+  
+</div>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://yooxinz.github.io/post/index.xml" title="RSS"></a>
+        <p>&copy; 2019 &middot; 
+        
+        </p>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://yooxinz.github.io/search.js" type="text/javascript"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/cdn.bootcss.com\/jquery\/1.11.0\/jquery.min.js"><\/script>')</script>
+
+
+
+
+</body>
+</html>
+

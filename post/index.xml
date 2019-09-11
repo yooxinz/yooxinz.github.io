@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 张永兴的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://yooxinz.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spring Boot 添加日志 TraceId</title>
+      <link>https://yooxinz.github.io/post/traceid/</link>
+      <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://yooxinz.github.io/post/traceid/</guid>
+      <description>配置Spring Boot 日志的 TraceId,提高问题排</description>
+    </item>
     
     <item>
       <title>nginx https认证</title>
