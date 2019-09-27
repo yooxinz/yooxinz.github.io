@@ -21,7 +21,7 @@ theme = "hugo-minimalist-theme"
     location = "陕西"
     # Link custom assets relative to /static
     avatar = "img/heard.png"
-    header_background = "img/desk.jpg"
+    header_background = "img/desk.jpeg"
     header_title = "张永兴的个人博客"
     #copyright = "Powered by [Hugo](http://gohugo.io)."
     # custom_css = []
