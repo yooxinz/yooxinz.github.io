@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据库 on 张永兴的博客</title>
+    <link>https://yooxinz.github.io/blog/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+    <description>Recent content in 数据库 on 张永兴的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://yooxinz.github.io/blog/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mysql逻辑删除保留唯一索引</title>
+      <link>https://yooxinz.github.io/blog/post/logicdelete/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://yooxinz.github.io/blog/post/logicdelete/</guid>
+      <description>通常的业务系统中为了防止认为操作失误,造成误删数据</description>
+    </item>
+    
+  </channel>
+</rss>
