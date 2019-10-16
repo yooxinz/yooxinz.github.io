@@ -1,5 +1,5 @@
 <div class="tags">
   {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-  <a class="tag" href="tags/{{ $name | urlize }}"><i class=""></i>{{ $name }}</a>
+  <a class="tag" href="/tags/{{ $name | urlize }}"><i class=""></i>{{ $name }}</a>
   {{ end }}
 </div>
