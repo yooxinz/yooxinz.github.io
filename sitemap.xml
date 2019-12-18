@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.yooxinz.com/post/frp/</loc>
+    <lastmod>2019-12-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.yooxinz.com/post/logicdelete/</loc>
     <lastmod>2019-10-15T00:00:00+00:00</lastmod>
   </url>
@@ -97,6 +102,12 @@
   </url>
   
   <url>
+    <loc>https://blog.yooxinz.com/tags/network/</loc>
+    <lastmod>2019-12-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.yooxinz.com/tags/nginx/</loc>
     <lastmod>2019-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -104,7 +115,7 @@
   
   <url>
     <loc>https://blog.yooxinz.com/post/</loc>
-    <lastmod>2019-10-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -128,7 +139,7 @@
   
   <url>
     <loc>https://blog.yooxinz.com/</loc>
-    <lastmod>2019-10-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

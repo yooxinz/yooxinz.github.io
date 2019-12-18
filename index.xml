@@ -6,10 +6,19 @@
     <description>Recent content on 张永兴的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.yooxinz.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Frp学习</title>
+      <link>https://blog.yooxinz.com/post/frp/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.yooxinz.com/post/frp/</guid>
+      <description>frp 是一个可用于内网穿透的高性能的反向代理应用 git</description>
+    </item>
     
     <item>
       <title>Mysql逻辑删除保留唯一索引</title>

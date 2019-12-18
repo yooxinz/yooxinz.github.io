@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Posts &middot; 张永兴的博客</title>
+        <title>张永兴的博客</title>
         <meta name="author">
         <meta name="description" content="张永兴的个人博客">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,130 +35,96 @@
           </div>
         </header>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-        <a class="btn home" href="https://blog.yooxinz.com" title="Back to home">&laquo; Back to home</a>
-        
-        
-            <article class="post">
-    
-<h1><a href="https://blog.yooxinz.com/post/gitstudy/" title="可视化学习Git">可视化学习Git</a></h1>
+        <article class="post">
+            <a class="btn home" href="https://blog.yooxinz.com" title="Back to home">&laquo; Back to home</a>
+            
+<h1><a href="https://blog.yooxinz.com/post/frp/" title="Frp学习">Frp学习</a></h1>
 
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2018.12.20">2018.12.20</time>
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2019.12.18">2019.12.18</time>
 
     &middot; Tagged in
         
-        <a href="https://blog.yooxinz.com/tags/git">git</a>
+        <a href="https://blog.yooxinz.com/tags/network">network</a>
         
     
 
 </span>
 </footer>
 
-    <p>给大家推荐一个Git学习工具LearnGitBra&hellip;</p>
-    <a href="https://blog.yooxinz.com/post/gitstudy/" title="可视化学习Git">Read more &raquo;</a>
-</article>
+            
 
-        
-            <article class="post">
+<h1 id="frp-是一个可用于内网穿透的高性能的反向代理应用">frp 是一个可用于内网穿透的高性能的反向代理应用</h1>
+
+<p><a href="https://github.com/fatedier/frp">github地址</a></p>
+
+<h2 id="服务器端">服务器端</h2>
+
+<p>配置:</p>
+
+<pre><code>[common]
+bind_port = 7000
+vhost_http_port = 7000
+</code></pre>
+
+<p>启动命令</p>
+
+<pre><code>./frps -c frps.ini
+</code></pre>
+
+<h2 id="客户端">客户端</h2>
+
+<p>配置:</p>
+
+<pre><code>[common]
+server_addr = 159.71.44.60
+server_port = 7000
+
+[web]
+type = http
+local_port = 8080
+custom_domains = taobao.yooxinz.com
+</code></pre>
+
+<p>启动命令:</p>
+
+<pre><code>./frpc -c frpc.ini
+</code></pre>
+
+            <ul class="share-buttons">
     
-<h1><a href="https://blog.yooxinz.com/post/hugosearch/" title="实现Hugo中的搜索功能">实现Hugo中的搜索功能</a></h1>
+</ul>
 
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2018.12.17">2018.12.17</time>
-
-    &middot; Tagged in
+        </article>
         
-        <a href="https://blog.yooxinz.com/tags/hugo">hugo</a>
-        
+        <div class="comments">
+            
+            
+            
+            
+            
+            <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDM5NS8xMDkzMg==">
+                <script type="text/javascript">
+                    (function(d, s) {
+                        var j, e = d.getElementsByTagName(s)[0];
     
-
-</span>
-</footer>
-
-    <p>基于Grunt实现Hugo中的搜索功能，先生成索引&hellip;</p>
-    <a href="https://blog.yooxinz.com/post/hugosearch/" title="实现Hugo中的搜索功能">Read more &raquo;</a>
-</article>
-
-        
-            <article class="post">
+                        if (typeof LivereTower === 'function') { return; }
     
-<h1><a href="https://blog.yooxinz.com/post/javagetattributebyreflect/" title="Java反射获取实体属性">Java反射获取实体属性</a></h1>
-
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.09.19">2017.09.19</time>
-
-    &middot; Tagged in
-        
-        <a href="https://blog.yooxinz.com/tags/java">java</a>
-        
+                        j = d.createElement(s);
+                        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                        j.async = true;
     
-
-</span>
-</footer>
-
-    <p>Java中可以通过反射获取未知实体的属性 Field field=message.getClass().getDeclaredField(&quot;value&quot;); field.setAccessible(true); field.get(message);&hellip;</p>
-    <a href="https://blog.yooxinz.com/post/javagetattributebyreflect/" title="Java反射获取实体属性">Read more &raquo;</a>
-</article>
-
+                        e.parentNode.insertBefore(j, e);
+                    })(document, 'script');
+                </script>
+                <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                
+        </div>
         
-            <article class="post">
-    
-<h1><a href="https://blog.yooxinz.com/post/aslist/" title="Arrays.asList()学习">Arrays.asList()学习</a></h1>
-
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.08.22">2017.08.22</time>
-
-    &middot; Tagged in
-        
-        <a href="https://blog.yooxinz.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>Arrays.asList() 是泛型方法, 传入的对象必须是对象数组 int[] myArray = { 1, 2,&hellip;</p>
-    <a href="https://blog.yooxinz.com/post/aslist/" title="Arrays.asList()学习">Read more &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://blog.yooxinz.com/post/javagetresource/" title="Java中获取资源文件">Java中获取资源文件</a></h1>
-
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
-
-    &middot; Tagged in
-        
-        <a href="https://blog.yooxinz.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>Java中可以通过getClass().getRe&hellip;</p>
-    <a href="https://blog.yooxinz.com/post/javagetresource/" title="Java中获取资源文件">Read more &raquo;</a>
-</article>
-
-        
-        <div class="pagination">
-<nav>
-
-    
-	<a class="btn newer" href="/post/" title="Newer">&laquo; Newer</a>
-	
-
-	<p class="counter">Page 2 of 3</p>
-
-
-	
-	<a class="btn older" href="/post/page/3/" title="Older">Older &raquo;</a>
-	
-
-</nav>
-</div>
-
     </main>
-
     <aside class="author">
 	<script>
   (function() {
@@ -227,6 +193,7 @@
 </aside>
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="https://blog.yooxinz.com/post/index.xml" title="RSS"></a>
