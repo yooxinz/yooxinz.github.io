@@ -6,10 +6,37 @@
     <description>Recent content in Posts on 张永兴的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Mar 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.yooxinz.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MultipartFile转换成File</title>
+      <link>https://blog.yooxinz.com/post/convertfilebymultipartfile/</link>
+      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.yooxinz.com/post/convertfilebymultipartfile/</guid>
+      <description>MultipartFile转换成File public static File convertFileByMultipartFile(MultipartFile file)</description>
+    </item>
+    
+    <item>
+      <title>二维码生成与解析</title>
+      <link>https://blog.yooxinz.com/post/qrcode/</link>
+      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.yooxinz.com/post/qrcode/</guid>
+      <description>pom.xml &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.google.zxing&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;core&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.3.3&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;compile&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.google.zxing&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javase&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.3.3&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;compile&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; 二维码生成 private static final int QRCOLOR = 0xFF000000;</description>
+    </item>
+    
+    <item>
+      <title>将网络url图片链接转换为File类型对象</title>
+      <link>https://blog.yooxinz.com/post/convertfilebyurl/</link>
+      <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.yooxinz.com/post/convertfilebyurl/</guid>
+      <description>将网络url图片链接转换为File类型对象 public static File convertFileByUrl(String</description>
+    </item>
     
     <item>
       <title>Frp学习</title>

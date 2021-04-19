@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>404 Page not found &middot; 张永兴的博客</title>
+        <title>张永兴的博客</title>
         <meta name="author">
         <meta name="description" content="张永兴的个人博客">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,11 +35,98 @@
           </div>
         </header>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
+        <article class="post">
             <a class="btn home" href="https://blog.yooxinz.com" title="Back to home">&laquo; Back to home</a>
-            <h1>404 - page not found</h1>
-            <p>The content you&#39;re looking for doesn&#39;t seem to exist.</p>
+            
+<h1><a href="https://blog.yooxinz.com/post/convertfilebymultipartfile/" title="MultipartFile转换成File">MultipartFile转换成File</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2021.03.17">2021.03.17</time>
+
+    &middot; Tagged in
+        
+        <a href="https://blog.yooxinz.com/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<h1 id="multipartfile转换成file">MultipartFile转换成File</h1>
+
+<pre><code>    public static File convertFileByMultipartFile(MultipartFile file) {
+        File toFile = null;
+        if (file.equals(&quot;&quot;) || file.getSize() &lt;= 0) {
+            file = null;
+        } else {
+            InputStream ins = null;
+            try {
+                ins = file.getInputStream();
+            toFile = new File(file.getOriginalFilename());
+            inputStreamToFile(ins, toFile);
+            ins.close();
+            } catch (IOException e) {
+                log.info(&quot;convertFileByMultipartFile error file name==&gt;{}&quot;,file.getName());
+                e.printStackTrace();
+            }
+        }
+        return toFile;
+
+    }
+
+    //获取流文件
+    private static void inputStreamToFile(InputStream ins, File file) {
+        try {
+            OutputStream os = new FileOutputStream(file);
+            int bytesRead = 0;
+            byte[] buffer = new byte[8192];
+            while ((bytesRead = ins.read(buffer, 0, 8192)) != -1) {
+                os.write(buffer, 0, bytesRead);
+            }
+            os.close();
+            ins.close();
+        } catch (Exception e) {
+            log.info(&quot;inputStreamToFile error file name==&gt;{}&quot;,file.getName());
+            e.printStackTrace();
+        }
+    }
+</code></pre>
+
+            <ul class="share-buttons">
+    
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            
+            
+            
+            
+            
+            <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDM5NS8xMDkzMg==">
+                <script type="text/javascript">
+                    (function(d, s) {
+                        var j, e = d.getElementsByTagName(s)[0];
+    
+                        if (typeof LivereTower === 'function') { return; }
+    
+                        j = d.createElement(s);
+                        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                        j.async = true;
+    
+                        e.parentNode.insertBefore(j, e);
+                    })(document, 'script');
+                </script>
+                <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                
+        </div>
+        
     </main>
     <aside class="author">
 <div class="search">
@@ -98,6 +185,7 @@
 </aside>
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="https://blog.yooxinz.com/post/index.xml" title="RSS"></a>

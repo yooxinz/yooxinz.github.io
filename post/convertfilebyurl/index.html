@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>404 Page not found &middot; 张永兴的博客</title>
+        <title>张永兴的博客</title>
         <meta name="author">
         <meta name="description" content="张永兴的个人博客">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,11 +35,97 @@
           </div>
         </header>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
+        <article class="post">
             <a class="btn home" href="https://blog.yooxinz.com" title="Back to home">&laquo; Back to home</a>
-            <h1>404 - page not found</h1>
-            <p>The content you&#39;re looking for doesn&#39;t seem to exist.</p>
+            
+<h1><a href="https://blog.yooxinz.com/post/convertfilebyurl/" title="将网络url图片链接转换为File类型对象">将网络url图片链接转换为File类型对象</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2021.03.17">2021.03.17</time>
+
+    &middot; Tagged in
+        
+        <a href="https://blog.yooxinz.com/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<h1 id="将网络url图片链接转换为file类型对象">将网络url图片链接转换为File类型对象</h1>
+
+<pre><code>    public static File convertFileByUrl(String url) {
+        File file = null;
+
+        URL urlfile;
+        InputStream inputStream = null;
+        OutputStream outputStream= null;
+        try {
+            file = File.createTempFile(&quot;wx_image&quot;, &quot;.png&quot;);
+            //下载
+            urlfile = new URL(url);
+            inputStream = urlfile.openStream();
+            outputStream= new FileOutputStream(file);
+
+            int bytesRead = 0;
+            byte[] buffer = new byte[8192];
+            while ((bytesRead = inputStream.read(buffer, 0, 8192)) != -1) {
+                outputStream.write(buffer, 0, bytesRead);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (null != outputStream) {
+                    outputStream.close();
+                }
+                if (null != inputStream) {
+                    inputStream.close();
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return file;
+    }
+</code></pre>
+
+            <ul class="share-buttons">
+    
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            
+            
+            
+            
+            
+            <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDM5NS8xMDkzMg==">
+                <script type="text/javascript">
+                    (function(d, s) {
+                        var j, e = d.getElementsByTagName(s)[0];
+    
+                        if (typeof LivereTower === 'function') { return; }
+    
+                        j = d.createElement(s);
+                        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                        j.async = true;
+    
+                        e.parentNode.insertBefore(j, e);
+                    })(document, 'script');
+                </script>
+                <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                
+        </div>
+        
     </main>
     <aside class="author">
 <div class="search">
@@ -98,6 +184,7 @@
 </aside>
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="https://blog.yooxinz.com/post/index.xml" title="RSS"></a>
