@@ -41,13 +41,15 @@
         <article class="post">
             <a class="btn home" href="https://blog.yooxinz.com" title="Back to home">&laquo; Back to home</a>
             
-<h1><a href="https://blog.yooxinz.com/post/frp/" title="Frp学习">Frp学习</a></h1>
+<h1><a href="https://blog.yooxinz.com/post/hazelcast/" title="Hazelcast docker">Hazelcast docker</a></h1>
 
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2019.12.18">2019.12.18</time>
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2021.05.12">2021.05.12</time>
 
     &middot; Tagged in
         
-        <a href="https://blog.yooxinz.com/tags/network">network</a>
+        <a href="https://blog.yooxinz.com/tags/docker">docker</a>, 
+        
+        <a href="https://blog.yooxinz.com/tags/hazelcast">hazelcast</a>
         
     
 
@@ -56,42 +58,45 @@
 
             
 
-<h1 id="frp-是一个可用于内网穿透的高性能的反向代理应用">frp 是一个可用于内网穿透的高性能的反向代理应用</h1>
+<h1 id="建立网络">建立网络</h1>
 
-<p><a href="https://github.com/fatedier/frp">github地址</a></p>
-
-<h2 id="服务器端">服务器端</h2>
-
-<p>配置:</p>
-
-<pre><code>[common]
-bind_port = 7000
-vhost_http_port = 7000
+<pre><code>docker network create --subnet=172.23.0.0/16 hazelcast
 </code></pre>
 
-<p>启动命令</p>
+<h1 id="hazelcast">hazelcast</h1>
 
-<pre><code>./frps -c frps.ini
+<p>拉镜像</p>
+
+<pre><code>docker pull hazelcast/hazelcast:3.7.1
 </code></pre>
 
-<h2 id="客户端">客户端</h2>
+<p>运行容器</p>
 
-<p>配置:</p>
-
-<pre><code>[common]
-server_addr = 159.71.44.60
-server_port = 7000
-
-[web]
-type = http
-local_port = 8080
-custom_domains = taobao.yooxinz.com
+<pre><code>docker run -d -p 5701:5701 --network hazelcast --ip 172.23.0.2 --restart always  hazelcast/hazelcast:3.7.1
 </code></pre>
 
-<p>启动命令:</p>
+<h1 id="可视化管理工具">可视化管理工具</h1>
 
-<pre><code>./frpc -c frpc.ini
+<p>拉镜像</p>
+
+<pre><code>docker pull hazelcast/management-center:3.12.16
 </code></pre>
+
+<p>运行容器</p>
+
+<pre><code>docker run -d -p 8080:8080 --network hazelcast --ip 172.23.0.3 --restart always hazelcast/management-center:3.7.1
+</code></pre>
+
+<p>访问地址
+<a href="http://localhost:8080/mancenter/login.jsp">http://localhost:8080/mancenter/login.jsp</a></p>
+
+<p>配置集群</p>
+
+<p>修改memberIp 172.23.0.2</p>
+
+<p>修改serverURL <a href="http://172.23.0.3:8080/mancenter">http://172.23.0.3:8080/mancenter</a></p>
+
+<p><img src="/img/hazelcast.png" alt="" /></p>
 
             <ul class="share-buttons">
     

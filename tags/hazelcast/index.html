@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>张永兴的博客</title>
+        <title>Hazelcast &middot; 张永兴的博客</title>
         <meta name="author">
         <meta name="description" content="张永兴的个人博客">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,96 +35,44 @@
           </div>
         </header>
 
-
 <div class="container clearfix">
     <main role="main" class="content">
-        <article class="post">
-            <a class="btn home" href="https://blog.yooxinz.com" title="Back to home">&laquo; Back to home</a>
-            
-<h1><a href="https://blog.yooxinz.com/post/frp/" title="Frp学习">Frp学习</a></h1>
+        <a class="btn home" href="https://blog.yooxinz.com" title="Back to home">&laquo; Back to home</a>
+        
+        
+            <article class="post">
+    
+<h1><a href="https://blog.yooxinz.com/post/hazelcast/" title="Hazelcast docker">Hazelcast docker</a></h1>
 
-<footer class="post-info">Posted on <span class="post-meta"><time datetime="2019.12.18">2019.12.18</time>
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2021.05.12">2021.05.12</time>
 
     &middot; Tagged in
         
-        <a href="https://blog.yooxinz.com/tags/network">network</a>
+        <a href="https://blog.yooxinz.com/tags/docker">docker</a>, 
+        
+        <a href="https://blog.yooxinz.com/tags/hazelcast">hazelcast</a>
         
     
 
 </span>
 </footer>
 
-            
+    <p>建立网络 docker network create --subnet=172.23.0.0/16 hazelcast hazelcast 拉镜像 docker pull hazelcast/hazelcast:3.7.1 运行容器 docker run -d -p 5701:5701&hellip;</p>
+    <a href="https://blog.yooxinz.com/post/hazelcast/" title="Hazelcast docker">Read more &raquo;</a>
+</article>
 
-<h1 id="frp-是一个可用于内网穿透的高性能的反向代理应用">frp 是一个可用于内网穿透的高性能的反向代理应用</h1>
-
-<p><a href="https://github.com/fatedier/frp">github地址</a></p>
-
-<h2 id="服务器端">服务器端</h2>
-
-<p>配置:</p>
-
-<pre><code>[common]
-bind_port = 7000
-vhost_http_port = 7000
-</code></pre>
-
-<p>启动命令</p>
-
-<pre><code>./frps -c frps.ini
-</code></pre>
-
-<h2 id="客户端">客户端</h2>
-
-<p>配置:</p>
-
-<pre><code>[common]
-server_addr = 159.71.44.60
-server_port = 7000
-
-[web]
-type = http
-local_port = 8080
-custom_domains = taobao.yooxinz.com
-</code></pre>
-
-<p>启动命令:</p>
-
-<pre><code>./frpc -c frpc.ini
-</code></pre>
-
-            <ul class="share-buttons">
-    
-</ul>
-
-        </article>
         
-        <div class="comments">
-            
-            
-            
-            
-            
-            <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDM5NS8xMDkzMg==">
-                <script type="text/javascript">
-                    (function(d, s) {
-                        var j, e = d.getElementsByTagName(s)[0];
-    
-                        if (typeof LivereTower === 'function') { return; }
-    
-                        j = d.createElement(s);
-                        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                        j.async = true;
-    
-                        e.parentNode.insertBefore(j, e);
-                    })(document, 'script');
-                </script>
-                <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-                </div>
-                
-        </div>
-        
+        <div class="pagination">
+<nav>
+
+	<p class="counter">Page 1 of 1</p>
+
+
+</nav>
+</div>
+
     </main>
+
     <aside class="author">
 <div class="search">
     <input id="search-input" class="search-input" type="text" placeholder="请搜索博文关键字">
@@ -186,7 +134,6 @@ custom_domains = taobao.yooxinz.com
 </aside>
 
 </div>
-
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="https://blog.yooxinz.com/post/index.xml" title="RSS"></a>
